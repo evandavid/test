@@ -1,5 +1,6 @@
 import React from 'react';
-import Intro from '../components/Intro/Intro';
+import Intro from 'components/Intro/Intro';
+import DashboardInvestmentList from 'components/Intro/Properties/DashboardInvestmentList';
 
 console.log(Intro)
 const Homepage = () => {
@@ -14,7 +15,7 @@ const Homepage = () => {
       >
         {/* <HIW /> */}
       </section>
-      {/* <DashboardInvestmentList /> */}
+      <DashboardInvestmentList />
     </div>
   )
 }
