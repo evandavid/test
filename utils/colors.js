@@ -1,4 +1,5 @@
 export const nnn = {
+    secondary: '#4295b7',
     info: '#5bc0de',
     primaryHover: '#e5a97e',
     danger: '#d77681',

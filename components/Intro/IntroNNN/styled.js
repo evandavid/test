@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { media, sizes, color } from '../../../utils';
+import { media, sizes, color } from 'utils';
 export const Banner = styled.div`
   height: 460px;
   overflow: hidden;

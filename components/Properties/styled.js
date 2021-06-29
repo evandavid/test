@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, media } from '../../../utils';
+import { color, media } from 'utils';
 
 export const Header = styled.div`
   text-align: center;
