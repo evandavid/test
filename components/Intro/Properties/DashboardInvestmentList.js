@@ -26,9 +26,7 @@ const DashboardInvestmentList = ({ backgroundColor = '#f8f8f7' }) => {
   const [currentDisplayCount, setCurrentDisplayCount] = useState(0);
   const [list, setList] = useState([]);
   /** need to use state,  shuffle in useContenfull will cause looping */
-  const [propertyIds] = useState(
-    shuffle([78, 74, 67, 66, 64, 63, 52, 14, 16, 65, 56, 37]),
-  );
+  const [propertyIds] = useState(shuffle([78, 74, 67, 66, 64, 63, 52, 14, 16, 65, 56, 37]));
   const totalPages = 12 / displayCount;
 
   const { data: dashboard } = useContentful({
@@ -110,10 +108,7 @@ const DashboardInvestmentList = ({ backgroundColor = '#f8f8f7' }) => {
           <PropertyContainer key={`content-${idx}`}>
             <div className="row">
               {slice.map((item, itdx) => (
-                <div
-                  key={`chunked-${idx}-${itdx}`}
-                  className="col-md-4 col-lg-3 col-sm-6"
-                >
+                <div key={`chunked-${idx}-${itdx}`} className="col-md-4 col-lg-3 col-sm-6">
                   <PropertyCard data={item} />
                 </div>
               ))}
@@ -140,9 +135,9 @@ const DashboardInvestmentList = ({ backgroundColor = '#f8f8f7' }) => {
 
       <div className="row">
         <LearnMoreInvestment>
-          <BtnCommon>
-            <Link to="/investments">See More</Link>
-          </BtnCommon>
+          <Link href="/investments" passHref>
+            <BtnCommon>See More</BtnCommon>
+          </Link>
         </LearnMoreInvestment>
       </div>
     </DashboardPropertyContainer>

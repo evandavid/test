@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
 import { media, sizes, color } from '../../../utils';
-// import { Link } from 'react-router';
-
-console.log(color('text'))
-
 export const Banner = styled.div`
   height: 460px;
   overflow: hidden;
@@ -98,6 +94,8 @@ export const BannerParagraph = styled.p`
   letter-spacing: 0.15px;
   width: 310px;
   margin: 0 0 37px 0;
+  font-weight: 300;
+  line-height: 28px;
 
   ${media.mobile`
     width: 556px;
@@ -150,7 +148,7 @@ const BtnStyle = css`
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `;
 
-export const BannerButtonHIW = styled.div`
+export const BannerButtonHIW = styled.a`
   margin: 7px;
   color: ${color('text')};
   background-color: #fff !important;
@@ -163,7 +161,7 @@ export const BannerButtonHIW = styled.div`
   `}
 `;
 
-export const BannerButtonInvestments = styled.div`
+export const BannerButtonInvestments = styled.a`
   margin: 7px;
   color: #f8f9fa !important;
   border-color: #f8f9fa !important;

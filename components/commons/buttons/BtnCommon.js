@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { media, color } from 'utils';
 
-const BtnCommon = styled.div`
+const BtnCommon = styled.a`
   color: ${color('background')};
   background-color: ${color('primary')};
   border-color: ${color('primary')};
@@ -13,19 +13,15 @@ const BtnCommon = styled.div`
     background-color: #f69659;
   }
 
-  a {
-    display: block;
-    height: 42px;
-    width: 100%;
-    display: flex;
-    height: 42px;
-    align-items: center;
-    justify-content: center;
+  background-color: #e47b3a;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    ${media.mobile`
-      height: 60px
-    `}
-  }
+  ${media.mobile`
+    height: 60px
+  `}
 
   ${media.desktop`
     font-size: 16px;

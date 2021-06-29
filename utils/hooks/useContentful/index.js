@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import contentfulClient from './contentful';
 import { useContentfulConfig } from './ContentfulContext';
 import { BRIX_CONTENTFUL, NNN_CONTENTFUL, BRIX } from '../../enums/site';
-import { useSafeSetState } from '#hooks/useSetState';
+import { useSafeSetState } from '../useSetState';
 
 const initialState = {
   isLoading: false,
@@ -11,12 +11,7 @@ const initialState = {
   error: null,
 };
 
-const useContentful = ({
-  contentType,
-  filterBySite = false,
-  filterByField,
-  options,
-}) => {
+const useContentful = ({ contentType, filterBySite = false, filterByField, options }) => {
   const [state, safeSetState] = useSafeSetState(initialState);
   const { siteId, contentfulConfig } = useContentfulConfig();
   const site = siteId === BRIX ? BRIX_CONTENTFUL : NNN_CONTENTFUL;
@@ -29,22 +24,21 @@ const useContentful = ({
           // eslint-disable-next-line camelcase
           content_type: contentType,
           ...(filterBySite ? { 'fields.site': site } : {}),
-          ...(filterByField
-            ? { [filterByField.field]: filterByField.value }
-            : {}),
+          ...(filterByField ? { [filterByField.field]: filterByField.value } : {}),
           ...options,
         });
 
         const fields = entries.items.map(item => item.fields);
         safeSetState({ data: fields });
       } catch (error) {
+        console.log(error);
         safeSetState({ error });
       } finally {
         safeSetState({ isLoading: false });
       }
     };
     fetchEntries();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterByField?.value]);
 
   return state;

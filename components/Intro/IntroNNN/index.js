@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './styled';
 import { FormattedMessage } from 'react-intl';
 import messages from '../messages';
+import Link from 'next/link';
 
 const IntroNNN = () => {
   return (
@@ -17,12 +18,16 @@ const IntroNNN = () => {
           />
         </Styled.BannerParagraph>
         <Styled.BannerBtns>
-          <Styled.BannerButtonHIW to="/how-it-works">
-            <FormattedMessage {...messages.introLink1} />
-          </Styled.BannerButtonHIW>
-          <Styled.BannerButtonInvestments to="/investments">
-            <FormattedMessage {...messages.introLink3} />
-          </Styled.BannerButtonInvestments>
+          <Link passHref href="/how-it-works">
+            <Styled.BannerButtonHIW>
+              <FormattedMessage {...messages.introLink1} />
+            </Styled.BannerButtonHIW>
+          </Link>
+          <Link passHref href="/investments">
+            <Styled.BannerButtonInvestments>
+              <FormattedMessage {...messages.introLink3} />
+            </Styled.BannerButtonInvestments>
+          </Link>
         </Styled.BannerBtns>
       </Styled.BannerDescription>
     </Styled.Banner>

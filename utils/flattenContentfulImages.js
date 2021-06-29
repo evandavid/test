@@ -20,6 +20,8 @@ export const flattenImageProperty = image => {
     return {
       title: image.fields.title || '',
       url: image.fields.file.url || '',
+      width: image.fields.file.details.image.width || '',
+      height: image.fields.file.details.image.height || '',
     };
   }
   return image;

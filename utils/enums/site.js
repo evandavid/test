@@ -1,4 +1,5 @@
-import { REITS } from './common';
+import common from './common';
+const REITS = common.REITS;
 
 // SITES
 export const BRIX = 'brix';

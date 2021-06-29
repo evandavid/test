@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, media } from '#theme';
+import { color, media } from '../../../utils';
 
 export const Header = styled.div`
   text-align: center;
@@ -224,9 +224,13 @@ export const PropertyContainer = styled(Container)`
         padding: 0 125px;
     }
   `}
+
+  & > .row {
+    background: #f8f8f7;
+  }
 `;
 
-export const PropertyCardContainer = styled.div`
+export const PropertyCardContainer = styled.a`
   box-shadow: 0px 2px 6px #00000029;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -237,6 +241,10 @@ export const PropertyCardContainer = styled.div`
   position: relative;
   height: 100%;
   background-color: ${color('investmentCard')};
+  display: block;
+  ${media.desktop`
+    min-height: 536px;
+  `}
 `;
 
 export const PropertyCardHeader = styled.div`
@@ -414,6 +422,22 @@ export const CarouselContainer = styled.div`
   }
 `;
 
+export const LearnMore = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+
+  ${media.mobile`
+        margin-top: 65px;
+    `}
+
+  ${media.desktop`
+        margin-top: 76px;
+    `}
+`;
+
 export const LearnMoreInvestment = styled(LearnMore)`
   margin-top: 24px;
   margin-bottom: 48px;
@@ -550,21 +574,4 @@ export const DashboardPropertyContainer = styled.div`
   ${media.desktop`
     padding-top: 124px;
   `}
-`;
-
-
-export const LearnMore = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 40px;
-
-  ${media.mobile`
-        margin-top: 65px;
-    `}
-
-  ${media.desktop`
-        margin-top: 76px;
-    `}
 `;

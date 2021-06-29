@@ -1,4 +1,4 @@
-import enumize from './enums/enumize';
+import enumize from '../enumize';
 
 const REITS = enumize({
   REIT_I: { id: 1 },
@@ -32,42 +32,157 @@ const REIT_STATUS = enumize({
 });
 
 const ACCOUNT_TYPES = enumize({
-  INDIVIDUAL: { id: 1, name: 'common.enum.accountTypes.individual', isRIA: false, mimicsName: 'Individual' },
+  INDIVIDUAL: {
+    id: 1,
+    name: 'common.enum.accountTypes.individual',
+    isRIA: false,
+    mimicsName: 'Individual',
+  },
   JOINT: { id: 2, name: 'common.enum.accountTypes.joint', isRIA: false, mimicsName: 'Joint' },
   TRUST: { id: 3, name: 'common.enum.accountTypes.trust', isRIA: false, mimicsName: 'Trust' },
   ENTITY: { id: 4, name: 'common.enum.accountTypes.entity', isRIA: false, mimicsName: 'Entity' },
-  RETIREMENT: { id: 5, name: 'common.enum.accountTypes.retirement', isRIA: false, mimicsName: 'Retirement' },
-  CUSTODIAN: { id: 6, name: 'common.enum.accountTypes.custodian', isRIA: false, mimicsName: 'Custodian' },
-  RIA_INDIVIDUAL: { id: 7, name: 'common.enum.accountTypes.riaIndividual', isRIA: true, mimicsName: 'P-I' },
+  RETIREMENT: {
+    id: 5,
+    name: 'common.enum.accountTypes.retirement',
+    isRIA: false,
+    mimicsName: 'Retirement',
+  },
+  CUSTODIAN: {
+    id: 6,
+    name: 'common.enum.accountTypes.custodian',
+    isRIA: false,
+    mimicsName: 'Custodian',
+  },
+  RIA_INDIVIDUAL: {
+    id: 7,
+    name: 'common.enum.accountTypes.riaIndividual',
+    isRIA: true,
+    mimicsName: 'P-I',
+  },
   RIA_JOINT: { id: 8, name: 'common.enum.accountTypes.riaJoint', isRIA: true, mimicsName: 'P-J' },
   RIA_TRUST: { id: 9, name: 'common.enum.accountTypes.riaTrust', isRIA: true, mimicsName: 'P-T' },
-  RIA_ENTITY: { id: 10, name: 'common.enum.accountTypes.riaEntity', isRIA: true, mimicsName: 'P-E' },
-  RIA_RETIREMENT: { id: 11, name: 'common.enum.accountTypes.riaRetirement', isRIA: true, mimicsName: 'P-R' },
+  RIA_ENTITY: {
+    id: 10,
+    name: 'common.enum.accountTypes.riaEntity',
+    isRIA: true,
+    mimicsName: 'P-E',
+  },
+  RIA_RETIREMENT: {
+    id: 11,
+    name: 'common.enum.accountTypes.riaRetirement',
+    isRIA: true,
+    mimicsName: 'P-R',
+  },
 });
 
 const ACCOUNT_SUB_TYPES = enumize({
-  COMMUNITY_PROPERTY: { id: 1, name: 'common.enum.accountSubTypes.communityProperty', accountTypeId: 2, phoenixId: '45' },
-  TENANTS_IN_COMMON: { id: 2, name: 'common.enum.accountSubTypes.tenantsInCommon', accountTypeId: 2, phoenixId: '43' },
-  JOINT_TENANTS: { id: 3, name: 'common.enum.accountSubTypes.jointTenants', accountTypeId: 2, phoenixId: '06' },
-  CORPORATION: { id: 4, name: 'common.enum.accountSubTypes.corporation', accountTypeId: 4, phoenixId: '02' },
-  PARTNERSHIP_LLC: { id: 5, name: 'common.enum.accountSubTypes.partnershipLlc', accountTypeId: 4, phoenixId: '52' },
-  TRADITIONAL_IRA: { id: 6, name: 'common.enum.accountSubTypes.traditionalIra', accountTypeId: 5, phoenixId: '11' },
-  SIMPLE_IRA: { id: 7, name: 'common.enum.accountSubTypes.simpleIra', accountTypeId: 5, phoenixId: '16' },
+  COMMUNITY_PROPERTY: {
+    id: 1,
+    name: 'common.enum.accountSubTypes.communityProperty',
+    accountTypeId: 2,
+    phoenixId: '45',
+  },
+  TENANTS_IN_COMMON: {
+    id: 2,
+    name: 'common.enum.accountSubTypes.tenantsInCommon',
+    accountTypeId: 2,
+    phoenixId: '43',
+  },
+  JOINT_TENANTS: {
+    id: 3,
+    name: 'common.enum.accountSubTypes.jointTenants',
+    accountTypeId: 2,
+    phoenixId: '06',
+  },
+  CORPORATION: {
+    id: 4,
+    name: 'common.enum.accountSubTypes.corporation',
+    accountTypeId: 4,
+    phoenixId: '02',
+  },
+  PARTNERSHIP_LLC: {
+    id: 5,
+    name: 'common.enum.accountSubTypes.partnershipLlc',
+    accountTypeId: 4,
+    phoenixId: '52',
+  },
+  TRADITIONAL_IRA: {
+    id: 6,
+    name: 'common.enum.accountSubTypes.traditionalIra',
+    accountTypeId: 5,
+    phoenixId: '11',
+  },
+  SIMPLE_IRA: {
+    id: 7,
+    name: 'common.enum.accountSubTypes.simpleIra',
+    accountTypeId: 5,
+    phoenixId: '16',
+  },
   SEP_IRA: { id: 8, name: 'common.enum.accountSubTypes.sepIra', accountTypeId: 5, phoenixId: '13' },
-  ROTH_IRA: { id: 9, name: 'common.enum.accountSubTypes.rothIra', accountTypeId: 5, phoenixId: '14' },
-  SOLO_401K: { id: 10, name: 'common.enum.accountSubTypes.solo401k', accountTypeId: 5, phoenixId: '23' },
-  PENSION_PLAN: { id: 11, name: 'common.enum.accountSubTypes.pensionPlan', accountTypeId: 5, phoenixId: '46' },
-  PROFIT_SHARING_PLAN: { id: 12, name: 'common.enum.accountSubTypes.profitSharingPlan', accountTypeId: 5, phoenixId: '22' },
-  KEOGH_PLAN: { id: 13, name: 'common.enum.accountSubTypes.keoghPlan', accountTypeId: 5, phoenixId: '47' },
-  TENANTS_IN_ENTIRETY: { id: 14, name: 'common.enum.accountSubTypes.tenantsInEntirety', accountTypeId: 2, phoenixId: '44' },
-  LIMITED_PARTNERSHIP: { id: 15, name: 'common.enum.accountSubTypes.limitedPartnership', accountTypeId: 4, phoenixId: '53' },
-  REVOCABLE_TRUST: { id: 16, name: 'common.enum.accountSubTypes.revocableTrust', accountTypeId: 3, phoenixId: '07' },
-  IRREVOCABLE_TRUST: { id: 17, name: 'common.enum.accountSubTypes.irrevocableTrust', accountTypeId: 3, phoenixId: '07' },
+  ROTH_IRA: {
+    id: 9,
+    name: 'common.enum.accountSubTypes.rothIra',
+    accountTypeId: 5,
+    phoenixId: '14',
+  },
+  SOLO_401K: {
+    id: 10,
+    name: 'common.enum.accountSubTypes.solo401k',
+    accountTypeId: 5,
+    phoenixId: '23',
+  },
+  PENSION_PLAN: {
+    id: 11,
+    name: 'common.enum.accountSubTypes.pensionPlan',
+    accountTypeId: 5,
+    phoenixId: '46',
+  },
+  PROFIT_SHARING_PLAN: {
+    id: 12,
+    name: 'common.enum.accountSubTypes.profitSharingPlan',
+    accountTypeId: 5,
+    phoenixId: '22',
+  },
+  KEOGH_PLAN: {
+    id: 13,
+    name: 'common.enum.accountSubTypes.keoghPlan',
+    accountTypeId: 5,
+    phoenixId: '47',
+  },
+  TENANTS_IN_ENTIRETY: {
+    id: 14,
+    name: 'common.enum.accountSubTypes.tenantsInEntirety',
+    accountTypeId: 2,
+    phoenixId: '44',
+  },
+  LIMITED_PARTNERSHIP: {
+    id: 15,
+    name: 'common.enum.accountSubTypes.limitedPartnership',
+    accountTypeId: 4,
+    phoenixId: '53',
+  },
+  REVOCABLE_TRUST: {
+    id: 16,
+    name: 'common.enum.accountSubTypes.revocableTrust',
+    accountTypeId: 3,
+    phoenixId: '07',
+  },
+  IRREVOCABLE_TRUST: {
+    id: 17,
+    name: 'common.enum.accountSubTypes.irrevocableTrust',
+    accountTypeId: 3,
+    phoenixId: '07',
+  },
 });
 
 const TRANSACTION_TYPES = enumize({
   // FIRST INVESTMENT TRANSACTION
-  INVESTMENT: { id: 1, name: 'common.enum.transactionTypes.investment', mimicsName: 'Investment', isAddition: true },
+  INVESTMENT: {
+    id: 1,
+    name: 'common.enum.transactionTypes.investment',
+    mimicsName: 'Investment',
+    isAddition: true,
+  },
   // ADDITIONAL INVESTMENT TRANSACTION
   ADDITIONAL_INVESTMENT: {
     id: 2,
@@ -123,7 +238,12 @@ const TRANSACTION_TYPES = enumize({
     isAddition: false,
   },
   // TRANSFER OF INVESTMENT
-  TRANSFER_TO: { id: 10, name: 'common.enum.transactionTypes.transferTo', mimicsName: 'Investment', isAddition: true },
+  TRANSFER_TO: {
+    id: 10,
+    name: 'common.enum.transactionTypes.transferTo',
+    mimicsName: 'Investment',
+    isAddition: true,
+  },
   // AUTOMATIC INVESTMENT TRANSACTION
   AUTOMATIC_INVESTMENT: {
     id: 11,
@@ -172,12 +292,27 @@ const REVIEW_TYPES = enumize({
 });
 
 const PAYMENT_TYPES = enumize({
-  MAIL_CHECK: { id: 1, name: 'common.enum.paymentTypes.mailCheck', mimicsName: 'Check', northcapitalName: 'CHECK' },
+  MAIL_CHECK: {
+    id: 1,
+    name: 'common.enum.paymentTypes.mailCheck',
+    mimicsName: 'Check',
+    northcapitalName: 'CHECK',
+  },
   WIRE_TRANSFER: { id: 2, name: 'common.enum.paymentTypes.wireTransfer', northcapitalName: 'WIRE' },
   ACH: { id: 3, name: 'common.enum.paymentTypes.ach', mimicsName: 'ACH', northcapitalName: 'ACH' },
   OTHER: { id: 4, name: 'common.enum.paymentTypes.another', northcapitalName: 'TBD' },
-  REINVEST: { id: 5, name: 'common.enum.paymentTypes.reinvest', mimicsName: 'Reinvest', northcapitalName: 'TBD' },
-  TRANSFER: { id: 6, name: 'common.enum.paymentTypes.transfer', mimicsName: 'Transfer', northcapitalName: 'TBD' },
+  REINVEST: {
+    id: 5,
+    name: 'common.enum.paymentTypes.reinvest',
+    mimicsName: 'Reinvest',
+    northcapitalName: 'TBD',
+  },
+  TRANSFER: {
+    id: 6,
+    name: 'common.enum.paymentTypes.transfer',
+    mimicsName: 'Transfer',
+    northcapitalName: 'TBD',
+  },
 });
 
 const CITIZENSHIP = enumize({
@@ -198,8 +333,14 @@ const DOCUMENT_TYPES = enumize({
   MISCELANEOUS: { id: 4, name: 'common.enum.documentTypes.miscelaneous' },
   REJECTED_INVESTMENT_FORM: { id: 5, name: 'common.enum.documentTypes.rejectedInvestmentForm' },
   TRANSFER_FORM: { id: 6, name: 'common.enum.documentTypes.transferForm' },
-  AUTOMATIC_INVESTMENT_AUTHORIZATION: { id: 7, name: 'common.enum.documentTypes.automaticInvestmentAuthorization' },
-  AUTOMATIC_INVESTMENT_CONFIRMATION: { id: 8, name: 'common.enum.documentTypes.automaticInvestmentConfirmation' },
+  AUTOMATIC_INVESTMENT_AUTHORIZATION: {
+    id: 7,
+    name: 'common.enum.documentTypes.automaticInvestmentAuthorization',
+  },
+  AUTOMATIC_INVESTMENT_CONFIRMATION: {
+    id: 8,
+    name: 'common.enum.documentTypes.automaticInvestmentConfirmation',
+  },
   ACH_RECEIPT: { id: 9, name: 'common.enum.documentTypes.achReceipt' },
   W_8_BEN: { id: 10, name: 'common.enum.documentTypes.w-8-ben' },
   NORTHCAPITAL_PHOTO_ID: { id: 11, name: 'common.enum.documentTypes.photoId' },
@@ -208,10 +349,16 @@ const DOCUMENT_TYPES = enumize({
   NORTHCAPITAL_ENTITY_DOCUMENT: { id: 14, name: 'common.enum.documentTypes.entityDocument' },
   NORTHCAPITAL_USER_407_LETTER: { id: 15, name: 'common.enum.documentTypes.user407Letter' },
   NORTHCAPITAL_ACCOUNT_407_LETTER: { id: 16, name: 'common.enum.documentTypes.account407Letter' },
-  SHARE_REPURCHASE_DISCLOSURE: { id: 17, name: 'common.enum.documentTypes.shareRepurchaseDisclosure' },
+  SHARE_REPURCHASE_DISCLOSURE: {
+    id: 17,
+    name: 'common.enum.documentTypes.shareRepurchaseDisclosure',
+  },
   NNN_OP_GENERAL: { id: 18, name: 'common.enum.documentTypes.nnnopGeneral' },
   NNN_OP_TAX: { id: 19, name: 'common.enum.documentTypes.nnnopTax' },
-  NORTHCAPITAL_REGD_SUITABILITY_DOCUMENT: { id: 20, name: 'common.enum.documentTypes.regdSuitabilityDocument' },
+  NORTHCAPITAL_REGD_SUITABILITY_DOCUMENT: {
+    id: 20,
+    name: 'common.enum.documentTypes.regdSuitabilityDocument',
+  },
 });
 
 const AML_EXCEPTION_STATUSES = enumize({
@@ -229,7 +376,10 @@ const MIMICS_TRANSACTION_STATUS = enumize({
 });
 
 const BATCH_OPERATION_TYPE = enumize({
-  TRANSACTION_REPURCHASE_APPROVE: { id: 1, name: 'common.enum.batchOperationType.transactionRepurchaseApprove' },
+  TRANSACTION_REPURCHASE_APPROVE: {
+    id: 1,
+    name: 'common.enum.batchOperationType.transactionRepurchaseApprove',
+  },
 });
 
 const NOTIFICATION_TYPE = enumize({
@@ -275,7 +425,8 @@ const NOTIFICATION_TYPE = enumize({
     id: 6,
     name: 'common.enum.notificationType.automaticInvestmentResubmitted',
     message: 'common.enum.notificationType.automaticInvestmentResubmittedMessage',
-    mobileNotificationTitle: 'common.enum.notificationType.automaticInvestmentResubmittedMobileTitle',
+    mobileNotificationTitle:
+      'common.enum.notificationType.automaticInvestmentResubmittedMobileTitle',
     mobileNotificationBody: 'common.enum.notificationType.automaticInvestmentResubmittedMobileBody',
   },
   ACH_INVESTMENT_FAILED: {
@@ -382,7 +533,11 @@ const SCHEDULE_LOG_TYPE = enumize({
 
 const REGULATION_TYPE = enumize({
   STATE_REIT: { id: 1, name: 'common.enum.regulationType.stateReit', restricted: true },
-  STATE_ACCOUNT_SUBTYPE: { id: 2, name: 'common.enum.regulationType.stateAccountSubtype', restricted: true },
+  STATE_ACCOUNT_SUBTYPE: {
+    id: 2,
+    name: 'common.enum.regulationType.stateAccountSubtype',
+    restricted: true,
+  },
 });
 
 const FAIL_EVENT_TYPE = enumize({
@@ -392,15 +547,27 @@ const FAIL_EVENT_TYPE = enumize({
   CHANGED_AMOUNT: { id: 4, name: 'common.enum.failEventType.changedAmount' },
   SUITABILITY: { id: 5, name: 'common.enum.failEventType.suitability' },
   OTHER: { id: 6, name: 'common.enum.failEventType.another' },
-  WELLS_FARGO_TRANSACTION_PROCESSOR: { id: 7, name: 'common.enum.failEventType.wellsFargoTransactionProcessor' },
+  WELLS_FARGO_TRANSACTION_PROCESSOR: {
+    id: 7,
+    name: 'common.enum.failEventType.wellsFargoTransactionProcessor',
+  },
   MIMICS_ERROR: { id: 8, name: 'common.enum.failEventType.mimicsError' },
   WELLS_FARGO_PAYMENT_EVENT: { id: 9, name: 'common.enum.failEventType.wellsFargoPaymentEvent' },
-  FUNDAMERICA_ACH_AUTHORIZATION_FAIL: { id: 10, name: 'common.enum.failEventType.fundamericaAchAuthorizationFail' },
-  FUNDAMERICA_PROCESSING_FAIL: { id: 11, name: 'common.enum.failEventType.fundamericaProcessingFail' },
+  FUNDAMERICA_ACH_AUTHORIZATION_FAIL: {
+    id: 10,
+    name: 'common.enum.failEventType.fundamericaAchAuthorizationFail',
+  },
+  FUNDAMERICA_PROCESSING_FAIL: {
+    id: 11,
+    name: 'common.enum.failEventType.fundamericaProcessingFail',
+  },
   EXPIRED: { id: 12, name: 'common.enum.failEventType.expired' },
   REIT_CLOSED: { id: 13, name: 'common.enum.failEventType.reitClosed' },
   MARKED_AS_DIVIDEND_FAILED: { id: 14, name: 'common.enum.failEventType.markedAsDividendFailed' },
-  ONE_INCOMPLETE_TRANSACTION_PER_ACCOUNT: { id: 15, name: 'common.enum.failEventType.oneIncompleteTransactionPerAccount' },
+  ONE_INCOMPLETE_TRANSACTION_PER_ACCOUNT: {
+    id: 15,
+    name: 'common.enum.failEventType.oneIncompleteTransactionPerAccount',
+  },
 });
 
 const WELLS_FARGO_LOG_TYPE = enumize({
@@ -472,26 +639,78 @@ const MFA_ACTION = enumize({
     name: 'common.mfa_action.enum.change_mfa_phone_via_sms',
     isAuthorizationRequired: true,
   },
-  CHANGE_MFA_EMAIL: { id: 2, name: 'common.mfa_action.enum.change_mfa_email', isAuthorizationRequired: true },
+  CHANGE_MFA_EMAIL: {
+    id: 2,
+    name: 'common.mfa_action.enum.change_mfa_email',
+    isAuthorizationRequired: true,
+  },
   DISABLE_MFA: { id: 3, name: 'common.enum.mfa_action.disable_mfa', isAuthorizationRequired: true },
   ENABLE_MFA: { id: 4, name: 'common.enum.mfa_action.enable_mfa', isAuthorizationRequired: true },
-  CHANGE_DEFAULT_OPTION: { id: 5, name: 'common.enum.mfa_action.change_default_option', isAuthorizationRequired: true },
+  CHANGE_DEFAULT_OPTION: {
+    id: 5,
+    name: 'common.enum.mfa_action.change_default_option',
+    isAuthorizationRequired: true,
+  },
   CHANGE_MFA_PHONE_VIA_VOICE: {
     id: 6,
     name: 'common.mfa_action.enum.change_mfa_phone_via_voice',
     isAuthorizationRequired: true,
   },
-  SHARE_REPURCHASE: { id: 7, name: 'common.mfa_action.enum.share_repurchase', isAuthorizationRequired: false },
-  UNLOCK_PERSONAL_INFO: { id: 8, name: 'common.mfa_action.enum.unlock_personal_info', isAuthorizationRequired: false },
-  UPDATE_ACCOUNT_INFO: { id: 9, name: 'common.mfa_action.enum.update_account_info', isAuthorizationRequired: false },
-  UPDATE_PERSONAL_INFO: { id: 10, name: 'common.mfa_action.enum.update_personal_info', isAuthorizationRequired: false },
-  UPDATE_MFA_OPTION: { id: 11, name: 'common.mfa_action.enum.update_personal_info', isAuthorizationRequired: true },
-  GET_PERSONAL_INFO: { id: 12, name: 'common.mfa_action.enum.update_personal_info', isAuthorizationRequired: false },
-  UPDATE_REINVEST_SETTINGS: { id: 13, name: 'common.mfa_action.enum.update_reinvest_settings', isAuthorizationRequired: false },
-  CREATE_BANK_INFO: { id: 14, name: 'common.mfa_action.enum.create_bank_info', isAuthorizationRequired: false },
-  REMOVE_BANK_INFO: { id: 15, name: 'common.mfa_action.enum.remove_bank_info', isAuthorizationRequired: false },
-  REASSIGN_BANK_INFO: { id: 16, name: 'common.mfa_action.enum.reassign_bank_info', isAuthorizationRequired: false },
-  UPDATE_BANK_INFO: { id: 17, name: 'common.mfa_action.enum.update_bank_info', isAuthorizationRequired: false },
+  SHARE_REPURCHASE: {
+    id: 7,
+    name: 'common.mfa_action.enum.share_repurchase',
+    isAuthorizationRequired: false,
+  },
+  UNLOCK_PERSONAL_INFO: {
+    id: 8,
+    name: 'common.mfa_action.enum.unlock_personal_info',
+    isAuthorizationRequired: false,
+  },
+  UPDATE_ACCOUNT_INFO: {
+    id: 9,
+    name: 'common.mfa_action.enum.update_account_info',
+    isAuthorizationRequired: false,
+  },
+  UPDATE_PERSONAL_INFO: {
+    id: 10,
+    name: 'common.mfa_action.enum.update_personal_info',
+    isAuthorizationRequired: false,
+  },
+  UPDATE_MFA_OPTION: {
+    id: 11,
+    name: 'common.mfa_action.enum.update_personal_info',
+    isAuthorizationRequired: true,
+  },
+  GET_PERSONAL_INFO: {
+    id: 12,
+    name: 'common.mfa_action.enum.update_personal_info',
+    isAuthorizationRequired: false,
+  },
+  UPDATE_REINVEST_SETTINGS: {
+    id: 13,
+    name: 'common.mfa_action.enum.update_reinvest_settings',
+    isAuthorizationRequired: false,
+  },
+  CREATE_BANK_INFO: {
+    id: 14,
+    name: 'common.mfa_action.enum.create_bank_info',
+    isAuthorizationRequired: false,
+  },
+  REMOVE_BANK_INFO: {
+    id: 15,
+    name: 'common.mfa_action.enum.remove_bank_info',
+    isAuthorizationRequired: false,
+  },
+  REASSIGN_BANK_INFO: {
+    id: 16,
+    name: 'common.mfa_action.enum.reassign_bank_info',
+    isAuthorizationRequired: false,
+  },
+  UPDATE_BANK_INFO: {
+    id: 17,
+    name: 'common.mfa_action.enum.update_bank_info',
+    isAuthorizationRequired: false,
+  },
 });
 
 const MESSAGES = enumize({
@@ -526,7 +745,6 @@ const CSV_REPORT = enumize({
   WELLS_FARGO: { id: 1, name: 'Failed dividends payments - Wells Fargo' },
   PMB: { id: 2, name: 'Failed dividends payments - PMB' },
 });
-
 
 const BANK_INFO_SUB_TYPE_ACCOUNT = enumize({
   CHECKING: { id: 1, name: 'checking' },
@@ -571,12 +789,24 @@ const NORTHCAPITAL_IMPORT_TYPES = enumize({
 const ACCOUNT_VERIFICATION_TYPES = enumize({
   FINANCIAL_SUITABILITY: { id: 1, name: 'Financial Suitability', order: 1 },
   // Not used
-  JOINTEE_FINANCIAL_SUITABILITY: { id: 2, name: 'Additional Signer Financial Suitability', order: 2 },
+  JOINTEE_FINANCIAL_SUITABILITY: {
+    id: 2,
+    name: 'Additional Signer Financial Suitability',
+    order: 2,
+  },
   NORTHCAPITAL_SUITABILITY: { id: 3, name: 'Investment Suitability', order: 3 },
   // Not used
-  JOINTEE_NORTHCAPITAL_SUITABILITY: { id: 4, name: 'Additional Signer Investment Suitability', order: 4 },
+  JOINTEE_NORTHCAPITAL_SUITABILITY: {
+    id: 4,
+    name: 'Additional Signer Investment Suitability',
+    order: 4,
+  },
   IDENTITY_VERIFICATION: { id: 5, name: 'Identity Verification', order: 5 },
-  JOINTEE_IDENTITY_VERIFICATION: { id: 6, name: 'Additional Signer Identity Verification', order: 6 },
+  JOINTEE_IDENTITY_VERIFICATION: {
+    id: 6,
+    name: 'Additional Signer Identity Verification',
+    order: 6,
+  },
   ONE_TIME_SIGN: { id: 7, name: 'Investment Documents', order: 8 },
   JOINTEE_ONE_TIME_SIGN: { id: 8, name: 'Additional Signer Investment Documents', order: 14 },
   AIP_SIGN: { id: 9, name: 'Automatic Investment Program', order: 11 },
@@ -618,6 +848,7 @@ const EMPLOYEE_STATUS = enumize({
   STUDENT: { id: 4, name: 'Student' },
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   REITS,
   SITES,
