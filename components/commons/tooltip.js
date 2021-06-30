@@ -1,13 +1,13 @@
 import { ToolTipTriggerText, MyReactTooltip, TooltipText } from './styled';
 
-const Tooltip = ({ triggerText, tooltip }) => {
+const Tooltip = ({ triggerText, tooltip, id }) => {
   return (
     <>
-      <ToolTipTriggerText data-tip data-for="DisclosureTooltip">
+      <ToolTipTriggerText data-tip data-for={id}>
         {triggerText}
       </ToolTipTriggerText>
 
-      <MyReactTooltip id="DisclosureTooltip" place="top" effect="solid" type="light" clickable>
+      <MyReactTooltip id={id} place="top" effect="solid" type="light" clickable>
         <TooltipText dangerouslySetInnerHTML={{ __html: tooltip }} />
       </MyReactTooltip>
     </>

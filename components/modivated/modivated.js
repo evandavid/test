@@ -79,6 +79,7 @@ const modivated = () => (
             <Styled.Disclosure>
               <Styled.DisclosureLink>
                 <Tooltip
+                  id="riskDisclosure"
                   triggerText="*Risk Disclosure"
                   tooltip="Note that any investment in a REIT or Modiv is <br />
                     speculative and involves substantial risks, including <br />
