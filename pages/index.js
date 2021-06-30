@@ -3,7 +3,7 @@ import Intro from 'components/Intro/Intro';
 import DashboardInvestmentList from 'components/Properties/DashboardInvestmentList';
 import Modivated from 'components/modivated/modivated';
 import Unique from 'components/Unique/Unique';
-import HIW from 'components/HowItWorks/Hiw';
+import HIW from 'components/howitworks/hiw';
 import withSEO from 'utils/hoc/withSEO';
 import getSEOData from 'utils/getSEOData';
 import { contentfulConfig } from 'utils';

@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { FooterLogo, FooterAddress, FooterModule, FooterSocial } from './parts';
 import messages from './messages';
-import Disclosure from './Disclosure';
+import Disclosure from './disclosure';
 import getGeneralInfo from 'utils/constants/generalInfo';
 
 import footerColumnOneLinks from 'utils/constants/links/footerColumnOne';

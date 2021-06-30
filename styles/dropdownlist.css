@@ -1,0 +1,303 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown__trigger {
+    position: relative;
+    font-weight: $font-weight-medium;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.dropdown__trigger .ico--chevron {
+    display: inline-block;
+    transform: rotate(90deg);
+    position: relative;
+    top: -2px;
+    margin-left: 8px;
+}
+
+.dropdown__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: all ease $animation-speed;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: $radius-medium;
+    min-width: 130px;
+    position: absolute;
+    right: -35px;
+    margin-top: -2px;
+    padding-top: 15px;
+    z-index: 100;
+}
+
+.dropdown__list:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: calc(50% - 10px);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 8px solid $color--dropdown-bg;
+}
+
+.dropdown__item {
+    line-height: 1;
+    background-color: $color--dropdown-bg;
+    padding: 0 10px;
+}
+
+.dropdown__item:first-child {
+    border-top-left-radius: $radius-medium;
+    border-top-right-radius: $radius-medium;
+    padding-top: 10px;
+}
+
+.dropdown__item:last-child {
+    border-bottom-left-radius: $radius-medium;
+    border-bottom-right-radius: $radius-medium;
+    padding-bottom: 10px;
+}
+
+.dropdown__link {
+    display: block;
+    border-radius: $radius-small;
+    padding: remify(8px) remify(12px);
+    white-space: nowrap;
+    color: $color--dropdown-color;
+}
+
+.dropdown__link:hover,
+.dropdown__link.active {
+    transition: all ease $animation-speed;
+    background-color: $brand-primary;
+}
+
+.dropdown__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    text-transform: uppercase;
+    font-family: 'Uni Neue';
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+@media $md-up {
+    .dropdown__title {
+        max-width: 50px;
+    }
+}
+
+@media $lg-up {
+    .dropdown__title {
+        max-width: 85px;
+    }
+}
+
+.dropdown:hover .dropdown__list {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown__list-title {
+    display: block;
+    line-height: 1;
+    background-color: $color--dropdown-bg;
+    padding: 10px;
+    border-top-left-radius: $radius-medium;
+    border-top-right-radius: $radius-medium;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.dropdown__list-title:hover {
+    color: $box-tabs-color;
+}
+
+.dropdown__counter {
+    display: inline-block;
+    background-color: $brand-primary;
+    color: $color-white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-weight: $font-weight-demi;
+    position: absolute;
+    top: 21px;
+    left: 8px;
+    z-index: 2;
+    line-height: 18px;
+    text-align: center;
+}
+
+.dropdown--notification {
+    margin-right: -8px;
+}
+
+.dropdown--notification .dropdown__list {
+    padding-top: 0;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media $md-up {
+    .dropdown--notification .dropdown__list {
+        width: 310px;
+        top: 65px;
+        right: -142px;
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
+        max-height: 60vh;
+    }
+}
+
+.dropdown--notification .dropdown__list:before {
+    top: -8px;
+}
+
+@media $sm-max {
+    .dropdown--notification .dropdown__list {
+        top: 79px;
+        left: 0;
+        right: 0;
+        position: fixed;
+        height: calc(100% - 79px);
+    }
+
+    .dropdown--notification .dropdown__list:before {
+        display: none;
+    }
+}
+
+@media $xs-only {
+    .dropdown--notification .dropdown__list {
+        margin-top: 0;
+        height: auto;
+    }
+}
+
+.dropdown--notification.dropdown--notification__open .dropdown__list {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown--notification.dropdown--notification__open:hover .dropdown__list {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown--notification:hover .dropdown__list {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdown--notification ul {
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+    background-color: $color--dropdown-bg;
+    overflow: auto;
+}
+
+.dropdown--notification .dropdown__trigger {
+    cursor: pointer;
+}
+
+.dropdown--notification .dropdown__link {
+    border-left: 5px solid $brand-primary;
+    padding-left: remify(16px);
+    border-radius: 0;
+}
+
+.dropdown--notification .dropdown__link--no-new {
+    border-left: none;
+}
+
+.dropdown--notification .dropdown__link__title {
+    font-weight: $font-weight-bold;
+    line-height: normal;
+}
+
+.dropdown--notification .dropdown__link__title .text {
+    position: relative;
+    top: -3px;
+}
+
+.dropdown--notification .dropdown__link.is-read {
+    border-left: none;
+}
+
+.dropdown--notification .dropdown__link.is-read .dropdown__link__title {
+    font-weight: $font-weight-normal;
+}
+
+.dropdown--notification .dropdown__item {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0 -1px 0 0 #4c4f5c;
+    cursor: pointer;
+}
+
+.dropdown--notification .dropdown__item:first-child,
+.dropdown--notification .dropdown__item:last-child {
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dropdown--notification .dropdown__item:last-child {
+    border-bottom-left-radius: $radius-medium;
+    border-bottom-right-radius: $radius-medium;
+}
+
+.dropdown--notification .dropdown__item:hover {
+    color: $color-white;
+}
+
+.dropdown--notification .ico--alarm {
+    font-size: 24px;
+    width: 21px;
+    height: 23px;
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown__link:hover .dropdown__link__title,
+.dropdown__link:hover .dropdown__link__account,
+.dropdown__link:hover .dropdown__link__user,
+.dropdown__link:hover .dropdown__link__date {
+    color: $color-white;
+}
+
+.dropdown__link__title {
+    display: block;
+    margin-bottom: remify(5px);
+    font-weight: $font-weight-demi;
+}
+
+.dropdown__link__account {
+    text-transform: uppercase;
+    color: $color--primary;
+    font-size: remify(9px);
+}
+
+.dropdown__link__user {
+    font-size: remify(10px);
+}
+
+.dropdown__link__date {
+    font-size: remify(10px);
+    color: $color--primary;
+}
+
+.dropdown__link--failed-aip .ico--warning {
+    color: #d9757f;
+    margin-right: remify(7px);
+}

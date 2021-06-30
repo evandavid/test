@@ -61,7 +61,7 @@ export const sizes = {
 // iterate through the sizes and create a media template
 export const media = Object.keys(sizes).reduce((accumulator, label) => {
   // use em in breakpoints to work properly cross-browser and support users
-  // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
+  // changing their browsers fontSize: https://zellwk.com/blog/media-query-units/
   const emSize = sizes[label] / 16;
   accumulator[label] = (...args) => css`
     @media (min-width: ${emSize}em) {
@@ -163,3 +163,43 @@ export const contentfulConfig = {
   environment: process.env.CONTENTFUL_ACCESS_ENVIRONTMENT,
   host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
 };
+
+export const fontSizes = {
+  fontSize: '1.5rem',
+  fontRegular: 'Arial, sans-serif',
+  // font-custom = "Proxima Nova W01", sans-serif
+  fontCustom: 'Lato, sans-serif',
+  fontSizeXxxsmall: '11px',
+  fontXizeXxsmall: '12px',
+  fontSizeXsmall: '13px',
+  fontSizeXmall: '14px',
+  fontSizeBase: '15px',
+  fontSizeNormal: '16px',
+  fontSizeDefault: '18px',
+  fontSizeMedium: '20px',
+  fontSizeLarge: '22px',
+  fontSizeXlarge: '24px',
+  fontSizeXxlarge: '28px',
+  fontSizeXxlarger: '30px',
+  fontSizeXxxlarge: '34px',
+  fontSizeGiant: '36px',
+  fontSizeJumbo: '42px',
+  fontSizeXjumbo: '46px',
+  fontSizeXxjumbo: '60px',
+
+  fontWeightUltraLight: 200,
+  fontWeightLight: 300,
+  fontWeightRegular: 400,
+  fontWeightNormal: 400,
+  fontWeightMedium: 500,
+  fontWeightDemi: 600,
+  fontWeightBold: 700,
+
+  lineHeightDefault: 1.4,
+  lineHeightLarger: 1.6,
+
+  titlePage: fontSizeJumbo,
+  subtitlePage: fontSizeLarge,
+  titleSection: fontSizeXxxlarge,
+  subtitleSection: fontSizeDefault
+}

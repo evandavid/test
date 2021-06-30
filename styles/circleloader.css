@@ -1,0 +1,368 @@
+/* svg-radius = 50
+stroke-width = 3
+$radius = 50 - $stroke-width / 2
+$diameter = $radius * 2
+$pi = 3.14159
+$circumference = $pi * $diameter
+$revolution = 2500ms
+$color-steps = 4 */
+
+.circle-loader {
+    margin: 0px auto;
+    display: block;
+    animation: svg-rotate 10000ms linear infinite;
+}
+
+.circle-loader circle {
+    fill: transparent;
+    stroke: $brand-primary;
+    stroke-width: 3;
+    stroke-dasharray: 0, 304.73422999999997;
+    animation: stroke-dash 2500ms linear infinite, stroke-width 2500ms linear infinite, stroke-color 10000ms steps(4) infinite;
+}
+
+.btn .circle-loader-wrap {
+    width: 26px;
+    display: inline-block;
+}
+
+.btn .circle-loader-wrap .circle-loader {
+    position: absolute;
+    margin-top: -19px;
+}
+
+.table-admin .circle-loader circle {
+    stroke: $blue-light !important;
+    stroke-width: 2;
+    animation: stroke-dash 2500ms linear infinite, stroke-width-small 2500ms linear infinite, stroke-color-neutral 10000ms steps(4) infinite;
+}
+
+.btn .circle-loader circle,
+.curtain .circle-loader circle,
+.section--purple .circle-loader circle {
+    stroke: #fff !important;
+    stroke-width: 2;
+    animation: stroke-dash 2500ms linear infinite, stroke-width-small 2500ms linear infinite, stroke-color-white 10000ms steps(4) infinite;
+}
+
+.btn--disabled .circle-loader circle,
+.btn.is-disabled .circle-loader circle {
+    stroke: #fff !important;
+    stroke-width: 2;
+    animation: stroke-dash 2500ms linear infinite, stroke-width-small 2500ms linear infinite, stroke-color-white 10000ms steps(4) infinite;
+}
+
+.btn--tertiary .circle-loader circle {
+    stroke: $brand-tertiary !important;
+}
+
+.preloader--boxed {
+    display: block;
+    border-radius: $radius-default;
+    padding: remify(20px) 0;
+    background-color: #f3f6f9;
+}
+
+@-moz-keyframes svg-rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes svg-rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes svg-rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes svg-rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 4;
+    }
+
+    45%,
+    55% {
+        stroke-width: 2;
+    }
+
+    50% {
+        stroke-width: 4;
+    }
+}
+
+@-webkit-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 4;
+    }
+
+    45%,
+    55% {
+        stroke-width: 2;
+    }
+
+    50% {
+        stroke-width: 4;
+    }
+}
+
+@-o-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 4;
+    }
+
+    45%,
+    55% {
+        stroke-width: 2;
+    }
+
+    50% {
+        stroke-width: 4;
+    }
+}
+
+@keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 4;
+    }
+
+    45%,
+    55% {
+        stroke-width: 2;
+    }
+
+    50% {
+        stroke-width: 4;
+    }
+}
+
+@-moz-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 2;
+    }
+
+    45%,
+    55% {
+        stroke-width: 4;
+    }
+
+    50% {
+        stroke-width: 2;
+    }
+}
+
+@-webkit-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 2;
+    }
+
+    45%,
+    55% {
+        stroke-width: 4;
+    }
+
+    50% {
+        stroke-width: 2;
+    }
+}
+
+@-o-keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 2;
+    }
+
+    45%,
+    55% {
+        stroke-width: 4;
+    }
+
+    50% {
+        stroke-width: 2;
+    }
+}
+
+@keyframes stroke-width {
+
+    0%,
+    100% {
+        stroke-width: 2;
+    }
+
+    45%,
+    55% {
+        stroke-width: 4;
+    }
+
+    50% {
+        stroke-width: 2;
+    }
+}
+
+@-moz-keyframes stroke-dash {
+    0% {
+        stroke-dasharray: 0, 301.59289;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 301.59289, 0;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 301.59289, 301.59289;
+        stroke-dashoffset: -301.59289;
+    }
+}
+
+@-webkit-keyframes stroke-dash {
+    0% {
+        stroke-dasharray: 0, 301.59289;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 301.59289, 0;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 301.59289, 301.59289;
+        stroke-dashoffset: -301.59289;
+    }
+}
+
+@-o-keyframes stroke-dash {
+    0% {
+        stroke-dasharray: 0, 301.59289;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 301.59289, 0;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 301.59289, 301.59289;
+        stroke-dashoffset: -301.59289;
+    }
+}
+
+@keyframes stroke-dash {
+    0% {
+        stroke-dasharray: 0, 301.59289;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 301.59289, 0;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 301.59289, 301.59289;
+        stroke-dashoffset: -301.59289;
+    }
+}
+
+@-moz-keyframes stroke-color {
+    from {
+        stroke: $brand-primary;
+    }
+}
+
+@-webkit-keyframes stroke-color {
+    from {
+        stroke: $brand-primary;
+    }
+}
+
+@-o-keyframes stroke-color {
+    from {
+        stroke: $brand-primary;
+    }
+}
+
+@keyframes stroke-color {
+    from {
+        stroke: $brand-primary;
+    }
+}
+
+@-moz-keyframes stroke-color-white {
+    from {
+        stroke: #fff;
+    }
+}
+
+@-webkit-keyframes stroke-color-white {
+    from {
+        stroke: #fff;
+    }
+}
+
+@-o-keyframes stroke-color-white {
+    from {
+        stroke: #fff;
+    }
+}
+
+@keyframes stroke-color-white {
+    from {
+        stroke: #fff;
+    }
+}
+
+@-moz-keyframes stroke-color-neutral {
+    from {
+        stroke: $blue-light;
+    }
+}
+
+@-webkit-keyframes stroke-color-neutral {
+    from {
+        stroke: $blue-light;
+    }
+}
+
+@-o-keyframes stroke-color-neutral {
+    from {
+        stroke: $blue-light;
+    }
+}
+
+@keyframes stroke-color-neutral {
+    from {
+        stroke: $blue-light;
+    }
+}
