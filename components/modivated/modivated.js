@@ -6,7 +6,7 @@ import CoverImage from 'public/img/modivated/cover-image.png';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
 import * as Styled from './styled';
 import Link from 'next/link';
-import Tooltip from 'components/commons/CustomTooltip';
+import Tooltip from 'components/commons/customTooltip';
 
 const modivated = () => (
   <Styled.ModivatedSection>
