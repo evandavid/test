@@ -7,7 +7,7 @@ import iconReitDistributesImg from 'public/img/icon-reit-distributes-taxable-inc
 import iconPayRentImg from 'public/img/icon-tenants-pay-rent.png';
 import * as Styled from './styled';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
-import Tooltip from 'components/commons/Tooltip';
+import Tooltip from '../commons/Tooltip';
 
 const HIW = () => {
   const breakpoints = [
