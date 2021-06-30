@@ -4,8 +4,12 @@ import * as Styled from './styled';
 import messages from './messages';
 
 const Disclosure = ({ intl }) => {
-  const translated1 = intl.formatMessage(messages.disclosureParagraph1);
-  const translated2 = intl.formatMessage(messages.disclosureParagraph2);
+  const translated1 = messages.disclosureParagraph1
+    ? intl.formatMessage(messages.disclosureParagraph1)
+    : '';
+  const translated2 = messages.disclosureParagraph2
+    ? intl.formatMessage(messages.disclosureParagraph2)
+    : '';
 
   return (
     <Styled.Container>
