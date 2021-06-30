@@ -22,17 +22,21 @@ const getSEOData = async (url, contentfulConfig) => {
       'fields.page': '/',
     });
 
-    const pageResponse = await contentfulClient.getEntries({
-      content_type: 'seo',
-      'fields.page': url,
-    });
+    let pageSeo = {};
+
+    if (url !== '/') {
+      const pageResponse = await contentfulClient.getEntries({
+        content_type: 'seo',
+        'fields.page': url,
+      });
+      const pageData = parseResponse(pageResponse);
+      pageSeo = pageData && flattenImages(pageData.find(field => field.page === url) || {});
+    }
 
     const defaultData = parseResponse(defaultResponse);
-    const pageData = parseResponse(pageResponse);
 
     const defaultSeo =
       defaultData && flattenImages(defaultData.find(field => field.page === '/') || {});
-    const pageSeo = pageData && flattenImages(pageData.find(field => field.page === url) || {});
 
     seo = { ...defaultSeo, ...pageSeo };
     /* eslint-enable camelcase */
