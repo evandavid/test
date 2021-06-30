@@ -3,4 +3,13 @@ module.exports = {
   images: {
     domains: ['images.ctfassets.net'],
   },
+
+  publicRuntimeConfig: {
+    contentful: {
+      space: process.env.CONTENTFUL_SPACE,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      environment: process.env.CONTENTFUL_ACCESS_ENVIRONTMENT,
+      host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
+    },
+  },
 };
