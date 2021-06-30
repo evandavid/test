@@ -59,8 +59,8 @@ const PropertyCard = ({ data, intl }) => {
                   loading="lazy"
                   style={{ width: '100%', padding: '25px' }}
                   src={`https:${thumb?.url}`}
-                  // height={thumb?.height}
-                  // width={thumb?.width}
+                  height={imageOptions?.h}
+                  width={imageOptions?.w}
                   alt={`${data.street} ${data.city} ${intl.formatMessage(messages.productsImgAlt)}`}
                 />
               </div>
@@ -68,8 +68,8 @@ const PropertyCard = ({ data, intl }) => {
               <img
                 loading="lazy"
                 src={`https:${thumb?.url}`}
-                // height={thumb?.height}
-                // width={thumb?.width}
+                height={imageOptions?.h}
+                width={imageOptions?.w}
                 alt={`${data.street} ${data.city} ${intl.formatMessage(messages.productsImgAlt)}`}
               />
             )}
@@ -79,8 +79,8 @@ const PropertyCard = ({ data, intl }) => {
               <img
                 loading="lazy"
                 src={`https:${brandLogo?.url}`}
-                // height={brandLogo?.height}
-                // width={brandLogo?.width}
+                height={imageLogoOptions?.h}
+                width={imageLogoOptions?.w}
                 alt={data.brandName}
               />
             </PropertyCardLogo>

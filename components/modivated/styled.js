@@ -209,7 +209,7 @@ export const TooltipText = styled.span`
   overflow: auto;
   display: block;
 
-  color: '#6C6A68' !important;
+  color: #6c6a68 !important;
   font-size: 16px;
   font-weight: normal;
   box-shadow: none;
@@ -223,5 +223,4 @@ export const TooltipText = styled.span`
   border-radius: 12px;
   min-height: 34px;
   max-width: 495px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 24%);
 `;

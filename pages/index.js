@@ -2,6 +2,8 @@ import React from 'react';
 import Intro from 'components/Intro/Intro';
 import DashboardInvestmentList from 'components/Properties/DashboardInvestmentList';
 import Modivated from 'components/modivated/modivated';
+import Unique from 'components/Unique/Unique';
+import HIW from 'components/HowItWorks/Hiw';
 import withSEO from 'utils/hoc/withSEO';
 import getSEOData from 'utils/getSEOData';
 import { contentfulConfig } from 'utils';
@@ -11,9 +13,9 @@ const Homepage = () => {
     <div>
       <Intro />
       <Modivated />
-      {/* <Unique /> */}
+      <Unique />
       <section className="section section--how-it-works large-padding-top" id="how-it-works">
-        {/* <HIW /> */}
+        <HIW />
       </section>
       <DashboardInvestmentList />
     </div>

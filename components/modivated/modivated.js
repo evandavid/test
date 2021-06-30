@@ -6,8 +6,8 @@ import CoverImage from 'public/img/modivated/cover-image.png';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
 import * as Styled from './styled';
 import Link from 'next/link';
-import Image from 'next/image';
-import ReactTooltip from 'react-tooltip';
+import { ToolTipTriggerText, MyReactTooltip } from '../HowItWorks/styled';
+import Tooltip from 'components/commons/Tooltip';
 
 const modivated = () => (
   <Styled.ModivatedSection>
@@ -79,35 +79,13 @@ const modivated = () => (
           <div className="row">
             <Styled.Disclosure>
               <Styled.DisclosureLink>
-                {/* <Tooltip
-                  displayClose={false}
-                  trigger={['hover']}
+                <Tooltip
                   triggerText="*Risk Disclosure"
-                >
-                  Note that any investment in a REIT or Modiv is speculative and
-                  involves substantial risks, including illiquidity and complete
-                  loss of invested capital and there are no guarantees dividends
-                  will be paid.
-                </Tooltip> */}
-
-                <a data-tip data-for="riskTip">
-                  *Risk Disclosure
-                </a>
-                <ReactTooltip
-                  id="riskTip"
-                  place="top"
-                  effect="solid"
-                  type="light"
-                  clickable
-                  delayHide={1000}
-                >
-                  <Styled.TooltipText>
-                    Note that any investment in a REIT or Modiv is <br />
+                  tooltip="Note that any investment in a REIT or Modiv is <br />
                     speculative and involves substantial risks, including <br />
                     illiquidity and complete loss of invested capital and <br />
-                    there are no guarantees dividends will be paid.
-                  </Styled.TooltipText>
-                </ReactTooltip>
+                    there are no guarantees dividends will be paid."
+                />
               </Styled.DisclosureLink>
             </Styled.Disclosure>
           </div>

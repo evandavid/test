@@ -534,6 +534,10 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
+.__react_component_tooltip.show {
+  opacity: 1 !important;
+}
+
 body {
   font-size: 15px;
   font-size: 0.9375rem;
