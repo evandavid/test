@@ -537,7 +537,9 @@ html {
 .__react_component_tooltip.show {
   opacity: 1 !important;
 }
-
+.list-headed__items {
+  list-style: none;
+}
 body {
   font-size: 15px;
   font-size: 0.9375rem;

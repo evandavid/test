@@ -6,7 +6,6 @@ import CoverImage from 'public/img/modivated/cover-image.png';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
 import * as Styled from './styled';
 import Link from 'next/link';
-import { ToolTipTriggerText, MyReactTooltip } from '../HowItWorks/styled';
 import Tooltip from 'components/commons/Tooltip';
 
 const modivated = () => (
