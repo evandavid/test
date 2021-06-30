@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
 
 const Meta = ({ nnnTitle, image, squareImage, description, pathname, ogtype, clientConfig }) => {
   const baseUrl = 'https://www.modiv.com';
@@ -12,8 +14,10 @@ const Meta = ({ nnnTitle, image, squareImage, description, pathname, ogtype, cli
   const titleEnding = 'Modiv';
   const ogType = ogtype || 'website';
 
-  // const facebookDomainVerification =
-  //   clientConfig && clientConfig.facebook ? clientConfig.facebook.domainVerification : '';
+  const facebookDomainVerification =
+    publicRuntimeConfig && publicRuntimeConfig.facebook
+      ? publicRuntimeConfig.facebook.domainVerification
+      : '';
 
   const meta = [
     {
@@ -26,7 +30,7 @@ const Meta = ({ nnnTitle, image, squareImage, description, pathname, ogtype, cli
     { name: 'robots', content: 'index, follow' },
     {
       name: 'facebook-domain-verification',
-      content: 'facebookDomainVerification',
+      content: facebookDomainVerification,
     },
     { property: 'site_name', content: siteName },
     { property: 'og:image', content: sharecover },

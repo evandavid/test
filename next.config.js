@@ -11,5 +11,8 @@ module.exports = {
       environment: process.env.CONTENTFUL_ACCESS_ENVIRONTMENT,
       host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
     },
+    facebook: {
+      domainVerification: process.env.FACEBOOK_DOMAIN_VERIFICATION,
+    },
   },
 };
