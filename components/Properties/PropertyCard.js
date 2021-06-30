@@ -56,6 +56,7 @@ const PropertyCard = ({ data, intl }) => {
             {data.isModivInvestment ? (
               <div style={{ display: 'fixed' }}>
                 <img
+                  loading="lazy"
                   style={{ width: '100%', padding: '25px' }}
                   src={`https:${thumb?.url}`}
                   // height={thumb?.height}
@@ -65,6 +66,7 @@ const PropertyCard = ({ data, intl }) => {
               </div>
             ) : (
               <img
+                loading="lazy"
                 src={`https:${thumb?.url}`}
                 // height={thumb?.height}
                 // width={thumb?.width}
@@ -75,6 +77,7 @@ const PropertyCard = ({ data, intl }) => {
           {data.isModivInvestment ?? (
             <PropertyCardLogo>
               <img
+                loading="lazy"
                 src={`https:${brandLogo?.url}`}
                 // height={brandLogo?.height}
                 // width={brandLogo?.width}
@@ -96,7 +99,7 @@ const PropertyCard = ({ data, intl }) => {
               <ul>
                 <li>
                   <div className="icon">
-                    <Image className="img-fluid" src={CapRateImage} alt="Img-CapRate" />
+                    <img className="img-fluid" src={CapRateImage} alt="Img-CapRate" />
                   </div>
                   <div className="icon__info">
                     {data.isModivInvestment ? (
@@ -116,7 +119,7 @@ const PropertyCard = ({ data, intl }) => {
                 </li>
                 <li>
                   <div className="icon">
-                    <Image className="img-fluid" src={IconAverageImage} alt="Img-IconAverage" />
+                    <img className="img-fluid" src={IconAverageImage} alt="Img-IconAverage" />
                   </div>
                   <div className="icon__info">
                     <strong>

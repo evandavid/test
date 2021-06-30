@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import messages from './messages';
@@ -13,7 +14,7 @@ const modivated = () => (
     <Styled.ModivatedContainer>
       <Styled.ModivatedRow>
         <Styled.ModivatedOrderTwo>
-          <Image src={CoverImage} alt="CoverImage" />
+          <img src={CoverImage} alt="CoverImage" />
         </Styled.ModivatedOrderTwo>
         <Styled.ModivatedOrderOne>
           <Styled.ModivatedTextHolder>

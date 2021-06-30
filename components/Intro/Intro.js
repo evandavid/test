@@ -7,6 +7,7 @@ import React from 'react';
 // import { BRIX } from '#features/site/enum';
 // import { withSiteId } from '#features/site/hoc';
 import IntroNNN from './IntroNNN';
+const Intro = IntroNNN;
 // import * as Styled from './styled';
 
 // const IntroBRIX = () => (
@@ -47,4 +48,4 @@ import IntroNNN from './IntroNNN';
 
 // const Intro = ({ siteId }) => <IntroNNN />;
 
-export default IntroNNN;
+export default Intro;

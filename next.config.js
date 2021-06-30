@@ -1,4 +1,8 @@
-module.exports = {
+const withImages = require('next-images');
+
+module.exports = withImages({
+  webpack5: false,
+
   reactStrictMode: true,
   images: {
     domains: ['images.ctfassets.net'],
@@ -15,4 +19,4 @@ module.exports = {
       domainVerification: process.env.FACEBOOK_DOMAIN_VERIFICATION,
     },
   },
-};
+});

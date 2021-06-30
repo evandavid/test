@@ -68,7 +68,6 @@ export const ModivatedOrderOne = styled(Column)`
 
 export const ModivatedOrderTwo = styled(Column)`
   order: 2;
-  padding-top: 24px;
   @media (min-width: 992px) {
     order: 1;
   }
