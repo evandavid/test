@@ -1,6 +1,6 @@
 import { theme } from 'styled-tools';
 import { css } from 'styled-components';
-import { nnn } from './colors'
+import { nnn } from './colors';
 // import { getColorsBySite } from '../colors';
 // import { BRIX, NNN } from '../features/site/enum';
 // nnn only
@@ -113,3 +113,53 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
 //     light: '0 0 11px 0 rgba(159,155,170,0.43)',
 //   },
 // });
+
+export const breakpoints = [
+  {
+    min: 0,
+    max: 767,
+    toShow: 1,
+    name: 'mobile',
+    image: {
+      h: 224,
+      w: 351,
+    },
+  },
+  {
+    min: 768,
+    max: 991,
+    toShow: 2,
+    name: 'tablet',
+    image: {
+      h: 224,
+      w: 289,
+    },
+  },
+  {
+    min: 992,
+    max: 1249,
+    toShow: 3,
+    name: 'desktop',
+    image: {
+      h: 224,
+      w: 255,
+    },
+  },
+  {
+    min: 1250,
+    max: Infinity,
+    toShow: 4,
+    name: 'large',
+    image: {
+      h: 224,
+      w: 388,
+    },
+  },
+];
+
+export const contentfulConfig = {
+  space: process.env.CONTENTFUL_SPACE,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  environment: process.env.CONTENTFUL_ACCESS_ENVIRONTMENT,
+  host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
+};

@@ -61,7 +61,6 @@ const Column = styled.div`
 
 export const ModivatedOrderOne = styled(Column)`
   order: 1;
-
   @media (min-width: 992px) {
     order: 2;
   }
@@ -69,7 +68,7 @@ export const ModivatedOrderOne = styled(Column)`
 
 export const ModivatedOrderTwo = styled(Column)`
   order: 2;
-
+  padding-top: 24px;
   @media (min-width: 992px) {
     order: 1;
   }
@@ -81,8 +80,7 @@ export const ModivatedOrderTwo = styled(Column)`
     vertical-align: middle;
     border-style: none;
 
-    @media (max-width: ${sizes.larger -
-        0.1}px) and (min-width: ${sizes.desktop}px) {
+    @media (max-width: ${sizes.larger - 0.1}px) and (min-width: ${sizes.desktop}px) {
       object-fit: cover;
       height: 100%;
     }
@@ -93,8 +91,7 @@ export const ModivatedTextHolder = styled.div`
   margin: 20px auto;
   color: #040404 !important;
 
-  @media (max-width: ${sizes.larger -
-      0.1}px) and (min-width: ${sizes.desktop}px) {
+  @media (max-width: ${sizes.larger - 0.1}px) and (min-width: ${sizes.desktop}px) {
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -111,8 +108,7 @@ export const ModivatedTextHolder = styled.div`
     line-height: 1.2;
     margin-top: 0;
 
-    @media (max-width: ${sizes.larger -
-        0.1}px) and (min-width: ${sizes.desktop}px) {
+    @media (max-width: ${sizes.larger - 0.1}px) and (min-width: ${sizes.desktop}px) {
       font-size: 2rem;
     }
 

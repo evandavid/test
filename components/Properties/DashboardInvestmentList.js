@@ -25,6 +25,7 @@ const DashboardInvestmentList = ({ backgroundColor = '#f8f8f7' }) => {
   const [displayCount, setDisplayCount] = useState(0);
   const [currentDisplayCount, setCurrentDisplayCount] = useState(0);
   const [list, setList] = useState([]);
+
   /** need to use state,  shuffle in useContenfull will cause looping */
   const [propertyIds] = useState(shuffle([78, 74, 67, 66, 64, 63, 52, 14, 16, 65, 56, 37]));
   const totalPages = 12 / displayCount;

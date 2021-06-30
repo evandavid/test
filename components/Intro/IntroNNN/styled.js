@@ -90,15 +90,14 @@ export const BannerHeading = styled.h3`
 export const BannerParagraph = styled.p`
   font-size: 20px;
   color: #fff !important;
-  margin: 10px auto;
   letter-spacing: 0.15px;
   width: 310px;
-  margin: 0 0 37px 0;
-  font-weight: 300;
+  margin: 0 0 6px 0;
   line-height: 28px;
 
   ${media.mobile`
     width: 556px;
+    margin: 0 0 37px 0;
   `}
 
   @media (max-width: ${sizes.desktop - 0.1}px) {

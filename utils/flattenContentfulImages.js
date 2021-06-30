@@ -15,11 +15,14 @@ export const flattenImageCarousel = images => {
   return images;
 };
 
-export const flattenImageProperty = image => {
+export const flattenImageProperty = (image, options) => {
+  const qs = Object.keys(options || {})
+    .map(key => `${key}=${options[key]}`)
+    .join('&');
   if (image?.fields) {
     return {
       title: image.fields.title || '',
-      url: image.fields.file.url || '',
+      url: `${image.fields.file.url || ''}?${qs}`,
       width: image.fields.file.details.image.width || '',
       height: image.fields.file.details.image.height || '',
     };

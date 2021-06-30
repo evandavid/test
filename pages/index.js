@@ -2,6 +2,9 @@ import React from 'react';
 import Intro from 'components/Intro/Intro';
 import DashboardInvestmentList from 'components/Properties/DashboardInvestmentList';
 import Modivated from 'components/modivated/modivated';
+import withSEO from 'utils/hoc/withSEO';
+import getSEOData from 'utils/getSEOData';
+import { contentfulConfig } from 'utils';
 
 const Homepage = () => {
   return (
@@ -17,9 +20,10 @@ const Homepage = () => {
   );
 };
 
-Homepage.getInitialProps = async () => {
-  // prefetch seo data TODO
-  return { data: 'data' };
-};
+/** getServerSideProps if we want to get SEO on SSR and not SSG */
+export async function getStaticProps() {
+  const seo = await getSEOData('/', contentfulConfig);
+  return { props: { seoData: seo } };
+}
 
-export default Homepage;
+export default withSEO(Homepage);

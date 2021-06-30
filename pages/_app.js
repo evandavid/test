@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps, contentful }) {
   return (
     <ContentfulContextProvider contentfulConfig={contentful}>
       <IntlProvider locale="en" messages={messagesEn}>
-        <Component {...pageProps} />
+        <Component {...pageProps} contentfulConfig={contentful} />
       </IntlProvider>
     </ContentfulContextProvider>
   );

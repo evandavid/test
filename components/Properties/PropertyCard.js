@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   PropertyCardContainer,
   PropertyCardHeader,
@@ -16,10 +16,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CapRateImage from 'public/img/investments/Icon-Cap-Rate.png';
 import IconAverageImage from 'public/img/investments/Icon-Average-rental-Increases.png';
+import { breakpoints } from '../../utils';
 
 const PropertyCard = ({ data, intl }) => {
-  const brandLogo = flattenImageProperty(data.brandLogo);
-  const thumb = flattenImageProperty(data.thumb);
+  const [imageOptions, setImageOptions] = useState({
+    fm: 'webp',
+    ...breakpoints[0].image,
+  });
+
+  const imageLogoOptions = {
+    fm: 'webp',
+    w: 55,
+    h: 55,
+  };
+
+  const calculateImageOptions = () => {
+    const { width } = window.screen;
+    const result = breakpoints.find(o => {
+      return width >= o.min && width <= o.max;
+    });
+
+    if (result) {
+      setImageOptions({ fm: 'webp', ...result.image });
+    }
+  };
+
+  useEffect(() => {
+    calculateImageOptions();
+  }, []);
+
+  const brandLogo = flattenImageProperty(data.brandLogo, imageLogoOptions);
+  const thumb = flattenImageProperty(data.thumb, imageOptions);
 
   return (
     <Link href={'/investments/' + data.id} passHref>
@@ -41,7 +68,6 @@ const PropertyCard = ({ data, intl }) => {
                 src={`https:${thumb?.url}`}
                 // height={thumb?.height}
                 // width={thumb?.width}
-                // src={flattenImageProperty(data.thumb)?.url}
                 alt={`${data.street} ${data.city} ${intl.formatMessage(messages.productsImgAlt)}`}
               />
             )}
