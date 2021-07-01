@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cn from 'classnames';
-import '../../styles/circleloader.css';
 
 const CircleLoader = ({ size, extendClass }) => (
   <span className={cn('circle-loader-wrap', extendClass)}>
