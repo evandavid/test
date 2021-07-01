@@ -1,19 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { CircleLoader } from 'components';
+import CircleLoader from 'components/commons/CircleLoader';
 import cn from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import { modal } from '#redux/actions/general';
-import { modals } from '#constants';
+import { modals } from 'utils/constants/modals';
 import NotificationListItem from './NotificationListItem';
 import ResubmitModal from './resubmitModal/ResubmitModal';
-import { withAchUpdate } from '#helpers/hoc/withAchUpdate';
+// import { withAchUpdate } from '#helpers/hoc/withAchUpdate';
 import messages from '../messages';
-
 import common from 'utils/enums/common';
-const ACCOUNT_TYPES = common.ACCOUNT_TYPES;
 
 export const ID = 'notifications-list';
+const ACCOUNT_TYPES = common.ACCOUNT_TYPES;
 
 const NotificationList = ({
   isNotificationVisible,
@@ -105,7 +103,7 @@ const NotificationList = ({
         <FormattedMessage {...messages.notificationListHeadline} />
       </span>
       <ul>{isLoading ? loader : dropdownItems}</ul>
-      <ResubmitModal
+      {/* <ResubmitModal
         item={resubmittedItem}
         modal={modal}
         onEditBank={handleEditBank}
@@ -116,7 +114,7 @@ const NotificationList = ({
         setACHUpdate={setACHUpdate}
         user={user}
         setIsSchedule={setIsSchedule}
-      />
+      /> */}
     </div>
   );
 };
@@ -139,23 +137,4 @@ NotificationList.propTypes = {
   user: PropTypes.any,
 };
 
-export default compose(
-  connect(
-    state => ({
-      isNotificationVisible: state.appState?.isNotificationVisible,
-      user: state.auth.user,
-      items: state.notifications.items,
-    }),
-    {
-      push,
-      notificationReset,
-      modal,
-      resubmitTransaction,
-      setBankForId,
-      setShowReprocessForId,
-      setIsSchedule,
-      setACHUpdate,
-    }
-  ),
-  withAchUpdate({ isSchedule: false })
-)(NotificationList);
+export default NotificationList;

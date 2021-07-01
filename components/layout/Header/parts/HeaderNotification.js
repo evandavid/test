@@ -5,9 +5,9 @@ import { ID as HEADER_CONTAINER_ID } from 'components/layout/Header/parts/header
 import NotificationList, {
   ID as NOTIFICATION_LIST_ID,
 } from 'components/layout/Header/notificationList/NotificationList';
-import MediaSize from '#utils/media-size';
+import MediaSize from 'utils/media-size';
 import React, { useState, useEffect } from 'react';
-import { contentScrollListener } from '#components/layout/ContentContainer';
+// import { contentScrollListener } from '#components/layout/ContentContainer';
 
 const HeaderNotification = ({ onListShow, onNotificationShow, isListOpen, notifications }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -41,10 +41,10 @@ const HeaderNotification = ({ onListShow, onNotificationShow, isListOpen, notifi
     };
 
     handleResize();
-    contentScrollListener.add(handleResize);
+    // contentScrollListener.add(handleResize);
     window.addEventListener('resize', handleResize);
     return () => {
-      contentScrollListener.remove(handleResize);
+      // contentScrollListener.remove(handleResize);
       window.removeEventListener('resize', handleResize);
     };
   }, []);

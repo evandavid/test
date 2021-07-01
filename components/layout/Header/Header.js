@@ -1,30 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import localStorage from 'localStorage';
 import cn from 'classnames';
-import compose from 'recompose/compose';
-import { triggerScrollListeners } from '#components/layout/ContentContainer';
+// import { triggerScrollListeners } from '#components/layout/ContentContainer';
 import { HeaderLogo, HeaderTimezone, NotificationBar } from './parts';
-import HeaderActions from '#components/layout/Header/HeaderDesign/HeaderActions';
-import HeaderNav from '#components/layout/Header/HeaderDesign/HeaderNav';
-import HeaderHamburger from '#components/layout/Header/HeaderDesign/HeaderHamburger';
-import getLinks from '#constants/links/nav';
-import { isAdmin, isUser } from '#helpers/userRoles';
-import HeaderContainer from '#components/layout/Header/HeaderContainer';
-import {
-  notificationVisible,
-  menuVisible,
-  setRedirectLoop,
-  fixedHeader,
-  modal,
-} from '#redux/actions/general';
-import { getNotifications } from '#redux/actions/client';
-import { segment } from '#utils/SegmentProxy';
-import LanguageSwitcher from '#components/intl/LanguageSwitcher/LanguageSwitcher';
-import features from 'utils/constants/features';
-import { withSiteId } from '#features/site/hoc';
+import HeaderActions from 'components/layout/Header/HeaderDesign/HeaderActions';
+import HeaderNav from 'components/layout/Header/HeaderDesign/HeaderNav';
+import HeaderHamburger from 'components/layout/Header/HeaderDesign/HeaderHamburger';
+import getLinks from 'utils/constants/links/nav';
+// import { isAdmin, isUser } from '#helpers/userRoles';
+import HeaderContainer from 'components/layout/Header/parts/headerContainer';
+import { segment } from 'utils/SegmentProxy';
+import LanguageSwitcher from 'components/commons/intl/LanguageSwitcher/LanguageSwitcher';
 import {
   HeaderInnerContainer,
   HeaderActionsWrapper,
@@ -98,8 +85,8 @@ const Header = ({
   const hasNotificationBar =
     !notificationBarHidden &&
     !localStorage.getItem('notificationBarHidden') &&
-    !isAdmin(user) &&
-    isUser(user) &&
+    // !isAdmin(user) &&
+    // isUser(user) &&
     !isInvestmentProcess &&
     (notifications.incompleteTransactionsCount > 0 ||
       notifications.soonToExpireTransactionsCount > 0);
@@ -150,7 +137,7 @@ const Header = ({
               menuVisible={menuVisible}
             />
           </HeaderNavWrapper>
-          <HeaderActionsWrapper>
+          {/* <HeaderActionsWrapper>
             <HeaderActions
               appState={appState}
               user={user}
@@ -164,7 +151,7 @@ const Header = ({
               onNotificationShow={handleNotification}
               isLoginFlow={isLoginFlow}
             />
-          </HeaderActionsWrapper>
+          </HeaderActionsWrapper> */}
           {isAdmin(user) && !isLoginFlow && <HeaderTimezone />}
           <div className="visible-xs visible-sm">
             <LanguageSwitcher compact />
@@ -175,30 +162,7 @@ const Header = ({
   );
 };
 
-export default compose(
-  connect(
-    state => ({
-      activeStep: state.investments && state.investments.activeStep,
-      appState: state.appState,
-      auth: state.auth,
-      route: state.router.location.pathname,
-      notifications: state.notifications,
-      permissions: state.permissions,
-      isFixedHeader: state.appState.fixedHeader,
-      isTranslationEnabled: features.config.isTranslationEnabled,
-    }),
-    {
-      notificationVisible,
-      menuVisible,
-      getNotifications,
-      setRedirectLoop,
-      fixedHeader,
-      push,
-      modal,
-    }
-  ),
-  withSiteId
-)(Header);
+export default Header;
 
 Header.propTypes = {
   appState: PropTypes.object,

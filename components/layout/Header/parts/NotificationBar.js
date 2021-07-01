@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cn from 'classnames';
-import { modals } from '#constants/index';
-import { BtnCloseWithLabel } from '#components';
+import { modals } from 'utils/constants/modals';
+import BtnClose from 'components/commons/buttons/BtnClose';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
@@ -39,7 +39,7 @@ const NotificationBar = ({
       >
         <FormattedMessage {...messages.notifButton} />
       </button>
-      <BtnCloseWithLabel
+      <BtnClose
         className="btn btn--reset btn--inline btn-link reset-margin text--underline"
         onClick={onHideNotificationBar}
       />
