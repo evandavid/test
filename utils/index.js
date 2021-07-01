@@ -164,6 +164,11 @@ export const contentfulConfig = {
   host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
 };
 
+const fontSizeJumbo = '42px';
+const fontSizeLarge = '22px';
+const fontSizeXxxlarge = '34px';
+const fontSizeDefault = '18px';
+
 export const fontSizes = {
   fontSize: '1.5rem',
   fontRegular: 'Arial, sans-serif',
@@ -201,5 +206,5 @@ export const fontSizes = {
   titlePage: fontSizeJumbo,
   subtitlePage: fontSizeLarge,
   titleSection: fontSizeXxxlarge,
-  subtitleSection: fontSizeDefault
-}
+  subtitleSection: fontSizeDefault,
+};

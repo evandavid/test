@@ -1,9 +1,9 @@
 import React from 'react';
 import Intro from 'components/Intro/Intro';
 import DashboardInvestmentList from 'components/Properties/DashboardInvestmentList';
-import Modivated from 'components/modivated/modivated';
+import Modivated from 'components/Modivated/Modivated';
 import Unique from 'components/Unique/Unique';
-import HIW from 'components/howitworks/hiw';
+import HIW from 'components/HowItWorks/Hiw';
 import withSEO from 'utils/hoc/withSEO';
 import getSEOData from 'utils/getSEOData';
 import { contentfulConfig } from 'utils';
