@@ -4,7 +4,6 @@ import brixLogo from 'public/img/brix.svg';
 import nnnLogo from 'public/img/newnnn.svg';
 import { sizes } from 'utils';
 import { BRIX } from 'utils/enums/site';
-import Link from 'next/link';
 
 export const Container = styled.div`
   position: relative;
@@ -20,7 +19,7 @@ export const LogoWrapper = styled.div`
   float: left;
 `;
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled.a`
   width: 123.82px;
   height: 35.48px;
   display: inline-block;

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LogoWrapper, LogoLink } from './styled';
+import Link from 'next/link';
+
 // import { Link, withRouter } from 'react-router';
 // import { isAdmin } from '#helpers/userRoles';
 // import { withSiteFeatureHelper } from '#features/site/hoc';
@@ -8,16 +10,13 @@ import { LogoWrapper, LogoLink } from './styled';
 const HeaderLogo = ({ user, siteFeatureHelper, router }) => {
   // add extra accountId if clicking on the logo from dashboard
   const accountId = router.params?.id || '';
-  const linkUrl = siteFeatureHelper({
-    returnNNN: () => '/',
-    returnBrix: () => `/account/dashboard/${accountId}`,
-  });
+  const linkUrl = `/account/dashboard/${accountId}`;
 
   return (
     <LogoWrapper>
-      <LogoLink to={linkUrl}>
-        <span className="sr-only">Link to homepage</span>
-      </LogoLink>
+      <Link href={linkUrl} passHref>
+        <LogoLink className="sr-only">Link to homepage</LogoLink>
+      </Link>
     </LogoWrapper>
   );
 };
