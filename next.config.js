@@ -6,9 +6,6 @@ module.exports = withPlugins([
     withImages,
     {
       webpack5: false,
-      experimental: {
-        modern: true,
-      },
 
       reactStrictMode: true,
       images: {
