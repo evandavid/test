@@ -1,0 +1,43 @@
+{
+  "db": {
+    "options": {
+      "dialectOptions": {
+        "ssl": false
+      },
+      "pool": {
+        "max": 20
+      },
+      "logging": false
+    }
+  },
+  "logger": {
+    "stdout": true,
+    "minLevel": "error"
+  },
+  "sendgrid": {
+    "disabled": true
+  },
+  "fakeIP": "8.8.8.8",
+  "documentApi": {
+    "environment": "(RU-test)", //used in emails fromname
+    "url": "https://richuncles-pdf-gen-dev.azurewebsites.net/",
+    "initialDocumentPath": "Documents/InitialInvestmentTest",
+    "additionalDocumentPath": "Documents/AdditionalInvestmentTest",
+    "sharedDocumentPath": "Documents/ShareCertificateTest",
+    "scheduleDocumentPath": "Documents/AutomaticInvestmentAuthorization",
+    "scheduleDocumentExecutionPath": "Documents/AutomaticInvestmentConfirmation",
+    "AIPAddress": "AIP@modiv.com",
+    "shareRepurchaseDisclosure": "Documents/ShareRepurchaseDisclosure"
+  },
+  "fundamerica": {
+    "env": "test.fundamerica.com"
+  },
+  "plaid": {
+    "env": "https://sandbox.plaid.com",
+    "envType": "sandbox"
+  },
+  "cache": {
+    "ttl": 30
+  },
+  "whitelistIp": ["185.90.37.95"]
+}

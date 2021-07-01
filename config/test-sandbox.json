@@ -1,0 +1,63 @@
+{
+  "db": {
+    "options": {
+      "dialectOptions": {
+        "ssl": false
+      },
+      "pool": {
+        "max": 20
+      },
+      "logging": false
+    }
+  },
+  "logger": {
+    "stdout": true,
+    "minLevel": "warn"
+  },
+  "sendgrid": {
+    "disabled": true
+  },
+  "jitterbit": {
+    "apiKey": "5uXucRM6jG70oPwUv6ZXDA5kaiKbGgo1fjyl32kMFod3k2samb46fka0FDda1T32"
+  },
+  "fakeIP": "8.8.8.8",
+  "documentApi": {
+    "environment": "(RU-test)",
+    "url": "https://richuncles-pdf-gen-dev.azurewebsites.net/",
+    "initialDocumentPath": "Documents/InitialInvestmentTest",
+    "additionalDocumentPath": "Documents/AdditionalInvestmentTest",
+    "sharedDocumentPath": "Documents/ShareCertificateTest",
+    "scheduleDocumentPath": "Documents/AutomaticInvestmentAuthorization",
+    "scheduleDocumentExecutionPath": "Documents/AutomaticInvestmentConfirmation",
+    "AIPAddress": "AIP@modiv.com",
+    "shareRepurchaseDisclosure": "Documents/ShareRepurchaseDisclosure"
+  },
+  "fundamerica": {
+    "env": "test.fundamerica.com",
+    "apiKey": "xxx"
+  },
+  "plaid": {
+    "env": "https://sandbox.plaid.com",
+    "envType": "sandbox"
+  },
+  "cache": {
+    "ttl": 30
+  },
+  "whitelistIp": ["185.90.37.95"],
+  "jwt": {
+    "secret": "jdSdq21fekwdndsa2f1dsa324Af3makml2lewdak"
+  },
+  "crypto": {
+    "key": "03i3H51Vxve0b6hFEMVmG1medjrVP897",
+    "salt": "VqJVjX7BF8m5eypPtu7om1lg"
+  },
+  "eureka": {
+    "ipApiToken": "SAK955A273TTPT88P9KZ"
+  },
+  "authy": {
+    "apiKey": "qMy7Xxtkrh89wdVqi62wogP2bxCv1Twl"
+  },
+  "redis": {
+    "connectionString": "redis://rediscloud:cOSP9sFbIa8cFlDS@pub-redis-17461.us-east-1-3.3.ec2.garantiadata.com:17461"
+  }
+}

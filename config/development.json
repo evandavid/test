@@ -1,0 +1,16 @@
+{
+  "db": {
+    "options": {
+      "pool": {
+        "max": 3
+      }
+    }
+  },
+  "hostname": "http://localhost:3000/",
+  "fakeIP": "8.8.8.8",
+  "whitelistIp": ["185.90.37.95"],
+  "segment": {
+    "enabled": true,
+    "writeKey": "T3lJqqjP88KRbvQG1xNqkt30eQTI9DUh"
+  }
+}

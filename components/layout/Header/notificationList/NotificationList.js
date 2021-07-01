@@ -5,11 +5,13 @@ import cn from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { modal } from '#redux/actions/general';
 import { modals } from '#constants';
-import { NOTIFICATION_TYPE } from 'utils/enums/common';
 import NotificationListItem from './NotificationListItem';
 import ResubmitModal from './resubmitModal/ResubmitModal';
 import { withAchUpdate } from '#helpers/hoc/withAchUpdate';
 import messages from '../messages';
+
+import common from 'utils/enums/common';
+const ACCOUNT_TYPES = common.ACCOUNT_TYPES;
 
 export const ID = 'notifications-list';
 
@@ -72,9 +74,7 @@ const NotificationList = ({
         NOTIFICATION_TYPE.NEW_DIVIDEND.id,
       ].includes(item.notificationTypeId)
     ) {
-      return push(
-        `/account/dashboard/${item.accountId}/transactions/${item.investmentId}`,
-      );
+      return push(`/account/dashboard/${item.accountId}/transactions/${item.investmentId}`);
     }
 
     return push(`/account/dashboard/${item.accountId}`);
@@ -85,10 +85,8 @@ const NotificationList = ({
       items.map(item => (
         <NotificationListItem
           failed={
-            item.notificationTypeId ===
-              NOTIFICATION_TYPE.AUTOMATIC_INVESTMENT_FAILED.id ||
-            item.notificationTypeId ===
-              NOTIFICATION_TYPE.ACH_INVESTMENT_FAILED.id
+            item.notificationTypeId === NOTIFICATION_TYPE.AUTOMATIC_INVESTMENT_FAILED.id ||
+            item.notificationTypeId === NOTIFICATION_TYPE.ACH_INVESTMENT_FAILED.id
           }
           handleClick={handleNotificationClick}
           key={item.id}
@@ -102,13 +100,7 @@ const NotificationList = ({
     );
 
   return (
-    <div
-      id={ID}
-      className={cn(
-        'dropdown__list',
-        isNotificationVisible && 'dropdown__list__open',
-      )}
-    >
+    <div id={ID} className={cn('dropdown__list', isNotificationVisible && 'dropdown__list__open')}>
       <span className="dropdown__list-title">
         <FormattedMessage {...messages.notificationListHeadline} />
       </span>
@@ -163,7 +155,7 @@ export default compose(
       setShowReprocessForId,
       setIsSchedule,
       setACHUpdate,
-    },
+    }
   ),
-  withAchUpdate({ isSchedule: false }),
+  withAchUpdate({ isSchedule: false })
 )(NotificationList);

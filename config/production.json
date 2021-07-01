@@ -1,0 +1,11 @@
+{
+  "db": {
+    "options": {
+      "dialectOptions": {
+        "ssl": {
+          "rejectUnauthorized": false
+        }
+      }
+    }
+  }
+}

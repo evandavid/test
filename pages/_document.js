@@ -1,6 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import config from 'config';
 
+const __NEXT_CONFIG__ = { ...config };
+// exclude server config
+delete __NEXT_CONFIG__.server;
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -45,6 +49,15 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <script
+            id="__NEXT_CONFIG__"
+            type="application/json"
+            nonce={this.props.nonce}
+            crossOrigin={this.props.crossOrigin || process.crossOrigin}
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(__NEXT_CONFIG__),
+            }}
+          />
           <NextScript />
         </body>
       </Html>

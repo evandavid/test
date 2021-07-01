@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LogoWrapper, LogoLink } from './styled'
+import { LogoWrapper, LogoLink } from './styled';
 // import { Link, withRouter } from 'react-router';
 // import { isAdmin } from '#helpers/userRoles';
 // import { withSiteFeatureHelper } from '#features/site/hoc';

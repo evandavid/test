@@ -1,0 +1,107 @@
+{
+  "jwt": {
+    "user": {
+      "securedTimeframeDuration": 180
+    }
+  },
+  "aws": {
+    "s3": {
+      "bucket": "ru-staging"
+    },
+    "sns": {
+      "application": {
+        "ios": {
+          "arn": "arn:aws:sns:us-east-1:469928456000:app/APNS/brix-staging"
+        },
+        "android": {
+          "arn": ""
+        }
+      },
+      "region": "us-east-1"
+    }
+  },
+  "db": {
+    "options": {
+      "logging": true
+    }
+  },
+  "hostname": "https://staging.modiv.com/",
+  "sendgrid": {
+    "nnn": {
+      "accountAddress": "accounts@modiv.com",
+      "emailAccountAddress": "accounts@modiv.com",
+      "aipAddress": "AIP@modiv.com",
+      "investmentAddress": "investments@modiv.com",
+      "defaultFromName": "Modiv",
+      "defaultFromAddress": "info@modiv.com",
+      "itAddress": "it@modiv.com",
+      "infoAddress": "info@modiv.com",
+      "supportAddress": "support@modiv.com",
+      "displaySupportAddress": "support@modiv.com",
+      "displayInvestmentAddress": "investments@modiv.com",
+      "templateId": "1ee7ebfa-608c-424f-810c-ea024a44034d"
+    },
+    "brix": {
+      "accountAddress": "accounts@brix-reit.com",
+      "emailAccountAddress": "accounts@brix-reit.com",
+      "aipAddress": "AIP@brix-reit.com",
+      "investmentAddress": "investment@brix-reit.com",
+      "defaultFromName": "BRIX REIT",
+      "defaultFromAddress": "brix@brix-reit.com",
+      "infoAddress": "info@brix-reit.com",
+      "supportAddress": "support@brix-reit.com",
+      "displaySupportAddress": "support@brix-reit.com",
+      "displayInvestmentAddress": "investment@brix-reit.com",
+      "templateId": "599fa86a-d287-4b41-ba30-bec75f6cea43"
+    },
+    "environment": "(RU-staging)", //used in emails fromname
+    "shreitFromName": "BRIX REIT, Inc.",
+    "nnnreitFromName": "Modiv Inc.",
+    "careitFromName": "Rich Uncles REIT I",
+    "realestateAddress": "fandi.rahmawan@polyrific.com",
+    "sellSharesAddress": "fandi.rahmawan@polyrific.com",
+    "contactUsAddress": "fandi.rahmawan@polyrific.com",
+    "investmentSignedAddress": "fandi.rahmawan@polyrific.com",
+    "amlExceptionAddress": "fandi.rahmawan@polyrific.com",
+    "retirementInvestmentAddress": "fandi.rahmawan@polyrific.com",
+    "defaultUserRecipient": "fandi.rahmawan@polyrific.com",
+    "developerRecipient": "fandi.rahmawan@polyrific.com",
+    "phoenixRecipients": ["fandi.rahmawan@polyrific.com"],
+    "ceoReplyAddress": "fandi.rahmawan+ceoreply@polyrific.com",
+    "retirementPartnerCoordinatorAddress": "fandi.rahmawan+retirement@polyrific.com"
+  },
+  "constants": {
+    "sites": {
+      "domains": {
+        "nnn": "https://staging.modiv.com",
+        "brix": "https://staging.brix-reit.com"
+      }
+    }
+  },
+  "documentApi": {
+    "url": "https://richuncles-pdf-gen-stage.azurewebsites.net/",
+    "initialDocumentPath": "Documents/InitialInvestment",
+    "additionalDocumentPath": "Documents/AdditionalInvestment",
+    "sharedDocumentPath": "Documents/ShareCertificate",
+    "scheduleDocumentPath": "Documents/AutomaticInvestmentAuthorization",
+    "scheduleDocumentExecutionPath": "Documents/AutomaticInvestmentConfirmation",
+    "achReceiptPath": "Documents/ACHPaymentConfirmation",
+    "shareRepurchaseDisclosure": "Documents/ShareRepurchaseDisclosure"
+  },
+  "fundamerica": {
+    "env": "sandbox.fundamerica.com"
+  },
+  "plaid": {
+    "env": "https://sandbox.plaid.com",
+    "envType": "sandbox"
+  },
+  "pardot": {
+    "piAId": "210752",
+    "piCId": "1740"
+  },
+  "whitelistIp": ["185.90.37.95"],
+  "segment": {
+    "enabled": true,
+    "writeKey": "T3lJqqjP88KRbvQG1xNqkt30eQTI9DUh"
+  }
+}

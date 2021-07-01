@@ -1,0 +1,65 @@
+{
+  "jitterbit": "jittebit",
+  "eureka": "eureka",
+  "db": {
+    "options": {
+      "dialectOptions": {
+        "ssl-disono": {
+          "rejectUnauthorized": false
+        },
+        "ssl": false,
+        "decimalNumbers": true
+      },
+      "pool": {
+        "max": 3
+      },
+      "logging": false
+    }
+  },
+  "logger": {
+    "stdout": true
+  },
+  "hostname": "http:/localhost:3000/",
+  "documentApi": {
+    "url": "https://richuncles-pdf-gen-dev.azurewebsites.net/",
+    "scheduleDocumentPath": "Documents/AutomaticInvestmentAuthorization",
+    "scheduleDocumentExecutionPath": "Documents/AutomaticInvestmentConfirmation"
+  },
+  "sendgrid": {
+    "fromAddress": "richuncles@richuncles.com",
+    "infoAddress": "info@richuncles.com",
+    "accountAddress": "accounts@richuncles.com",
+    "supportRichUncleAddress": "support@richuncles.com",
+    "defaultFromName": "Rich Uncles",
+    "richUncleFromName": "Rich Uncles REIT",
+    "nnnreitFromName": "Rich Uncles NNN REIT",
+    "careitFromName": "Rich Uncles REIT I",
+    "investmentAddress": "investments@richuncles.com",
+    "sellSharesAddress": "fandi.rahmawan@polyrific.com",
+    "contactUsAddress": "fandi.rahmawan@polyrific.com",
+    "investmentSignedAddress": "fandi.rahmawan@polyrific.com",
+    "amlExceptionAddress": "fandi.rahmawan@polyrific.com",
+    "retirementInvestmentAddress": "fandi.rahmawan@polyrific.com",
+    "defaultUserRecipient": "fandi.rahmawan@polyrific.com",
+    "developerRecipient": ["fandi.rahmawan@polyrific.com"],
+    "fundingInvestmentRecipient": ["fandi.rahmawan@polyrific.com", "fandi.rahmawan@polyrific.com"],
+    "genericEmailTemplateId": "c05b9b58-10ce-471c-a167-e0bc9747f57c",
+    "AIPAddress": "AIP@RichUncles.com"
+  },
+  "plaid": {
+    "env": "https://sandbox.plaid.com"
+  },
+  "fakeIP": "8.8.8.8",
+  "whitelistIp": ["185.90.37.95"],
+  "fundamerica": {
+    "env": "test.fundamerica.com"
+  },
+  "phoenix": {
+    "sftp": {
+      "host": "PHOENIX_SFTP_HOST",
+      "port": "PHOENIX_SFTP_PORT",
+      "username": "PHOENIX_SFTP_USERNAME",
+      "password": "PHOENIX_SFTP_PASSWORD"
+    }
+  }
+}

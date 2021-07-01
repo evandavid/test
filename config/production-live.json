@@ -1,0 +1,127 @@
+{
+  "db": {
+    "options": {
+      "pool": {
+        "max": 195 // two instances 195x2 + 10 connections for Jitterbit
+      }
+    }
+  },
+  "aws": {
+    "s3": {
+      "bucket": "ru-production"
+    },
+    "sns": {
+      "application": {
+        "ios": {
+          "arn": "arn:aws:sns:us-east-1:469928456000:app/APNS/brix"
+        },
+        "android": {
+          "arn": ""
+        }
+      },
+      "region": "us-east-1"
+    }
+  },
+  "hostname": "https://www.modiv.com/",
+  "sendgrid": {
+    "nnn": {
+      "accountAddress": "accounts@modiv.com",
+      "emailAccountAddress": "accounts@modiv.com",
+      "aipAddress": "AIP@modiv.com",
+      "investmentAddress": "investments@modiv.com",
+      "defaultFromName": "Modiv",
+      "defaultFromAddress": "info@modiv.com",
+      "itAddress": "it@modiv.com",
+      "infoAddress": "info@modiv.com",
+      "supportAddress": "support@modiv.com",
+      "displaySupportAddress": "support@modiv.com",
+      "displayInvestmentAddress": "investments@modiv.com",
+      "templateId": "b3cc690c-4ab9-488d-8a72-42ed11bf24f3"
+    },
+    "brix": {
+      "accountAddress": "accounts@brix-reit.com",
+      "emailAccountAddress": "accounts@brix-reit.com",
+      "aipAddress": "AIP@brix-reit.com",
+      "investmentAddress": "investment@brix-reit.com",
+      "defaultFromName": "BRIX REIT",
+      "defaultFromAddress": "brix@brix-reit.com",
+      "infoAddress": "info@brix-reit.com",
+      "supportAddress": "support@brix-reit.com",
+      "displaySupportAddress": "support@brix-reit.com",
+      "displayInvestmentAddress": "investment@brix-reit.com",
+      "templateId": "2b1dd03b-0755-4817-a4f1-65fded37d1b2"
+    },
+    "shreitFromName": "BRIX REIT, Inc.",
+    "nnnreitFromName": "Modiv Inc.",
+    "careitFromName": "Rich Uncles REIT I",
+    "realestateAddress": "realestate@modiv.com",
+    "sellSharesAddress": "info@modiv.com",
+    "contactUsAddress": "info@modiv.com",
+    "investmentSignedAddress": "investmentalerts@modiv.com",
+    "amlExceptionAddress": "info@modiv.com",
+    "retirementInvestmentAddress": "ira@modiv.com",
+    "developerRecipient": ["fandi.rahmawan@polyrific.com", "lamont@modiv.com"],
+    "phoenixRecipients": ["RWHoldingsSupport@phxa.com"],
+    "ceoReplyAddress": "ceoreply@modiv.com",
+    "retirementPartnerCoordinatorAddress": "retirement@modiv.com"
+  },
+  "constants": {
+    "sites": {
+      "domains": {
+        "nnn": "https://www.modiv.com",
+        "brix": "https://www.brix-reit.com"
+      }
+    }
+  },
+  "documentApi": {
+    "url": "https://richuncles-pdf-gen.azurewebsites.net/",
+    "initialDocumentPath": "Documents/InitialInvestment",
+    "additionalDocumentPath": "Documents/AdditionalInvestment",
+    "sharedDocumentPath": "Documents/ShareCertificate",
+    "scheduleDocumentPath": "Documents/AutomaticInvestmentAuthorization",
+    "scheduleDocumentExecutionPath": "Documents/AutomaticInvestmentConfirmation",
+    "achReceiptPath": "Documents/ACHPaymentConfirmation",
+    "shareRepurchaseDisclosure": "Documents/ShareRepurchaseDisclosure"
+  },
+  "fundamerica": {
+    "env": "apps.fundamerica.com"
+  },
+  "plaid": {
+    "env": "https://api.plaid.com",
+    "envType": "live"
+  },
+  "cache": {
+    "ttl": 86400
+  },
+  "pardot": {
+    "piAId": "210752",
+    "piCId": "1074"
+  },
+  "whitelistIp": ["185.90.37.95"],
+  "segment": {
+    "enabled": true,
+    "writeKey": "m8vd23ao64A6vLGATTj5rP8qDyoOfuhB"
+  },
+  "api": {
+    "features": {
+      "isMobileAppAPIEnabled": false
+    }
+  },
+  "scripts": {
+    "opDataImport": {
+      "maskUserEmail": false
+    }
+  },
+  "contentful": {
+    "space": "2dyife3zn9k3",
+    "accessToken": "516144896c3a53384f8021315c7937c4d5a9f6cac0f6e49ffb17fe836573fd5a",
+    "environment": "master"
+  },
+  "moneymade": {
+    "url": "https://connect.moneymade.io",
+    "loginFormUrl": "https://moneymade-production.herokuapp.com"
+  },
+  "facebook": {
+    "domainVerification": "e37e7euxf9asqxufiafl4oymalarhb"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "jwt": {
+    "admin": {
+      "expiration": 18000
+    },
+    "user": {
+      "expiration": 1800,
+      "jointeeExpiration": 15552000,
+      "refreshExpiration": 1980,
+      "idleTimeoutSec": 15552000,
+      "securedTimeframeDuration": 900
+    }
+  },
+  "db": {
+    "options": {
+      "dialectOptions": {
+        "ssl": {
+          "rejectUnauthorized": false
+        }
+      },
+      "logging": false
+    }
+  },
+  "aws": {
+    "s3": {
+      "rootPath": "https://s3.amazonaws.com/"
+    },
+    "sns": {
+      "application": {
+        "ios": {
+          "arn": "arn:aws:sns:eu-central-1:469928456000:app/APNS_SANDBOX/brix-dev"
+        },
+        "android": {
+          "arn": ""
+        }
+      },
+      "region": "eu-central-1"
+    }
+  },
+  "logger": {
+    "stdout": true,
+    "minLevel": "info"
+  },
+  "logentries": {
+    "minLevel": 3
+  },
+  "crypto": {
+    "algorithm": "AES-256-CBC",
+    "ivSize": 16,
+    "keyLength": 256
+  },
+  "constants": {
+    "defaultMFATypeId": 1,
+    "defaultAdminMFATypeId": 1,
+    "defaultMFAActionExpireTimeInMinute": 3,
+    "adminTransactionListLimit": 50,
+    "userTransactionListLimit": 25,
+    "adminSchedulesListLimit": 50,
+    "adminUserListLimit": 20,
+    "publishedTestimonialMax": 40,
+    "testimonialListMax": 40,
+    "publishedTestimonialItemsPerPage": 40,
+    "minimumInvestmentValueWhenIssuedTransaction": 100,
+    "minimumInvestmentValueWhenNoIssuedTransaction": 1000,
+    "leadSourcesLimit": 8,
+    "maxInvestmentValue": 10000000,
+    "scheduleExecutionHour": 3,
+    "transactionExpirationTimeFrameInDays": 45,
+    "notifyTransactionExpirationTimeFrameInDays": 40,
+    "forgeTrustRedirectUrl": "https://forgetrust.com/the-smart-way-to-invest-with-modiv",
+    "reit": {
+      "2": {
+        "minimumInvestmentValueWhenIssuedTransaction": 100,
+        "minimumInvestmentValueWhenNoIssuedTransaction": 1000
+      },
+      "4": {
+        "minimumInvestmentValueWhenIssuedTransaction": 5,
+        "minimumInvestmentValueWhenNoIssuedTransaction": 100
+      }
+    },
+    "sites": {
+      "entries": [
+        {
+          "id": 1,
+          "name": "NNN Reit",
+          "hostnames": [
+            "modiv.com",
+            "www.modiv.com",
+            "richuncles.com",
+            "www.richuncles.com",
+            "staging.modiv.com",
+            "ru-staging.herokuapp.com",
+            "development.modiv.com",
+            "ru-development.herokuapp.com",
+            "ru-integration.herokuapp.com"
+          ],
+          "allowedReits": [1, 2],
+          "defaultSuitabilities": {
+            "percentageOfNetWorth": 0.1,
+            "ruAffiliates": false,
+            "minNetWorth1": 70000,
+            "checkOnlyTransaction": false,
+            "minAnnualIncome1": 70000,
+            "minNetWorth2": 250000,
+            "stateSuitabilityStandards": "I have (i) an annual gross income of at least US$70,000 and a net worth of at least US$70,000; and/or (ii) a net worth of at least US$250,000. (Net worth in all cases should be calculated excluding the value of your home, furnishings and automobiles. In the case of sales to fiduciary accounts, these suitability standards must be met by the fiduciary account, or by the person who directly or indirectly supplied the funds for the purchase of the Shares if such person is the fiduciary.) The investment I propose to make herein will not exceed 10% of my net worth, as defined above."
+          }
+        },
+        {
+          "id": 2,
+          "name": "BRIX Reit",
+          "hostnames": [
+            "brix-reit.com",
+            "www.brix-reit.com",
+            "staging.brix-reit.com",
+            "development.brix-reit.com"
+          ],
+          "allowedReits": [4],
+          "defaultSuitabilities": {
+            "percentageOfNetWorth": 0.1,
+            "ruAffiliates": false,
+            "minNetWorth1": 70000,
+            "checkOnlyTransaction": false,
+            "minAnnualIncome1": 70000,
+            "minNetWorth2": 250000,
+            "stateSuitabilityStandards": "I have (i) an annual gross income of at least US$70,000 and a net worth of at least US$70,000; and/or (ii) a net worth of at least US$250,000. (Net worth in all cases should be calculated excluding the value of your home, furnishings and automobiles. In the case of sales to fiduciary accounts, these suitability standards must be met by the fiduciary account, or by the person who directly or indirectly supplied the funds for the purchase of the Shares if such person is the fiduciary.) The investment I propose to make herein will not exceed 10% of my net worth, as defined above."
+          }
+        }
+      ],
+      "domains": {
+        "nnn": "https://www.modiv.com",
+        "brix": "https://www.brix-reit.com"
+      },
+      "features": {
+        "isTranslationEnabled": [],
+        "isInternationalEnabled": [],
+        "isStudentHousingReitEnabled": [1, 2]
+      }
+    },
+    "suitability": {
+      "minNetWorth": 1000000,
+      "minAnnualIncome": 200000,
+      "minAnnualIncomeWhenSpouse": 300000,
+      "minTotalAssets": 5000000
+    },
+    "features": {
+      "isTranslationEnabled": false,
+      "isInternationalEnabled": false,
+      "isInternationalEnabledForStudentHousing": false,
+      "isStudentHousingReitEnabled": false,
+      "isNNNReitEnabled": true,
+      "reinvestChangeDisabled": [4]
+    },
+    "userIdentityToken": {
+      "length": 6
+    }
+  },
+  "scripts": {
+    "opDataImport": {
+      "maskUserEmail": true,
+      "emailMask": "fandi.rahmawan+:tag@polyrific.com"
+    }
+  },
+  "cache": {
+    "ttl": 300
+  },
+  "segment": {
+    "enabled": false,
+    "writeKey": "WNd8lLI6RWQ9xKuM6Bzdeb0KbCYt8FvD"
+  },
+  "northcapital": {
+    "url": "",
+    "developerAPIKey": "",
+    "clientID": ""
+  },
+  "api": {
+    "features": {
+      "isMobileAppAPIEnabled": true
+    }
+  },
+  "login": {
+    "lockOut": {
+      "maxUnsuccessfulTries": 5
+    }
+  },
+  "moneymade": {
+    "url": "https://development.connect.moneymade.io",
+    "loginFormUrl": "https://moneymade-staging.herokuapp.com"
+  }
+}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ClickOutHandler from 'react-onclickout';
 import cn from 'classnames';
-import { ID as HEADER_CONTAINER_ID } from 'components/layout/Header/HeaderContainer';
+import { ID as HEADER_CONTAINER_ID } from 'components/layout/Header/parts/headerContainer';
 import NotificationList, {
   ID as NOTIFICATION_LIST_ID,
 } from 'components/layout/Header/notificationList/NotificationList';
@@ -9,12 +9,7 @@ import MediaSize from '#utils/media-size';
 import React, { useState, useEffect } from 'react';
 import { contentScrollListener } from '#components/layout/ContentContainer';
 
-const HeaderNotification = ({
-  onListShow,
-  onNotificationShow,
-  isListOpen,
-  notifications,
-}) => {
+const HeaderNotification = ({ onListShow, onNotificationShow, isListOpen, notifications }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const handleClose = () => {
@@ -40,8 +35,7 @@ const HeaderNotification = ({
 
         if (headerContainerBottom && notificationList) {
           notificationList.style.top = `${headerContainerBottom}px`;
-          notificationList.style.maxHeight = `${window.innerHeight -
-            headerContainerBottom}px`;
+          notificationList.style.maxHeight = `${window.innerHeight - headerContainerBottom}px`;
         }
       }
     };
@@ -63,20 +57,13 @@ const HeaderNotification = ({
             'dropdown--notification__open': isListOpen,
           })}
         >
-          <div
-            className="dropdown__trigger hidden-xs"
-            onClick={onNotificationShow}
-          >
+          <div className="dropdown__trigger hidden-xs" onClick={onNotificationShow}>
             {notifications?.count > 0 && (
               <span className="dropdown__counter">{notifications.count}</span>
             )}
             <span className="ico ico--alarm" />
           </div>
-          <NotificationList
-            onClose={handleClose}
-            onListShow={onListShow}
-            isMobile={isMobile}
-          />
+          <NotificationList onClose={handleClose} onListShow={onListShow} isMobile={isMobile} />
         </div>
       </ClickOutHandler>
     </div>
