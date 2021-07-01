@@ -99,7 +99,13 @@ const PropertyCard = ({ data, intl }) => {
               <ul>
                 <li>
                   <div className="icon">
-                    <img className="img-fluid" src={CapRateImage} alt="Img-CapRate" />
+                    <Image
+                      width={28}
+                      height={25}
+                      className="img-fluid"
+                      src={CapRateImage}
+                      alt="Img-CapRate"
+                    />
                   </div>
                   <div className="icon__info">
                     {data.isModivInvestment ? (
@@ -119,7 +125,13 @@ const PropertyCard = ({ data, intl }) => {
                 </li>
                 <li>
                   <div className="icon">
-                    <img className="img-fluid" src={IconAverageImage} alt="Img-IconAverage" />
+                    <Image
+                      width={28}
+                      height={25}
+                      className="img-fluid"
+                      src={IconAverageImage}
+                      alt="Img-IconAverage"
+                    />
                   </div>
                   <div className="icon__info">
                     <strong>

@@ -178,6 +178,8 @@ export const UniqueListItems = styled.li`
     height: auto;
     vertical-align: middle;
     border-style: none;
+    width: 162px !important;
+    height: 62px !important;
   }
 
   span {

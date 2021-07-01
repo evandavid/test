@@ -2,18 +2,19 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import messages from './messages';
-import CoverImage from 'public/img/modivated/cover-image.png';
+import CoverImage from 'public/img/modivated/cover-image.png?webp';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
 import * as Styled from './styled';
 import Link from 'next/link';
 import Tooltip from 'components/commons/CustomTooltip';
+import Image from 'next/image';
 
 const modivated = () => (
   <Styled.ModivatedSection>
     <Styled.ModivatedContainer>
       <Styled.ModivatedRow>
         <Styled.ModivatedOrderTwo>
-          <img src={CoverImage} alt="CoverImage" />
+          <Image width={783} height={440} src={CoverImage} alt="CoverImage" />
         </Styled.ModivatedOrderTwo>
         <Styled.ModivatedOrderOne>
           <Styled.ModivatedTextHolder>
