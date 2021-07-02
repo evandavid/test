@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start -p $PORT",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "node_modules/.bin/serve build"
   },
   "dependencies": {
     "@styled-icons/boxicons-solid": "^10.34.0",
@@ -22,6 +23,7 @@
     "react-dom": "17.0.2",
     "react-intl": "^5.20.4",
     "react-tooltip": "^4.2.21",
+    "serve": "^12.0.0",
     "styled-components": "^5.3.0",
     "styled-tools": "^1.7.2",
     "webp-loader": "^0.6.0"
