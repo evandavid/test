@@ -7,7 +7,8 @@ module.exports = withImages(
 
     reactStrictMode: true,
     images: {
-      domains: ['images.ctfassets.net'],
+      loader: 'cloudinary',
+      domains: ['images.ctfassets.net', 'res.cloudinary.com'],
     },
 
     publicRuntimeConfig: {
