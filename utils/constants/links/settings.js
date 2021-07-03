@@ -1,7 +1,7 @@
 import React from 'react';
-import { hasRole } from '#helpers/userRoles';
-import permissions from '#constants/permissions';
-import Cog from '#components/icons/Cog';
+// import { hasRole } from '#helpers/userRoles';
+import permissions from 'utils/constants/permissions';
+import Cog from 'components/commons/icons/Cog';
 import messages from './messages';
 
 const linksCommon = [];
@@ -82,13 +82,13 @@ const filterByPermissions = (links, permissions) =>
 export default function(user, permissions = []) {
   let role = 'common';
 
-  if (hasRole(user, 'user')) {
-    role = 'user';
-  }
+  // if (hasRole(user, 'user')) {
+  //   role = 'user';
+  // }
 
-  if (hasRole(user, 'admin')) {
-    role = 'admin';
-  }
+  // if (hasRole(user, 'admin')) {
+  //   role = 'admin';
+  // }
 
   const admin = filterByPermissions(linksAdmin, permissions);
 

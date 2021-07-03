@@ -28,6 +28,8 @@ export const MenuLink = styled.div`
   position: relative;
   padding: 12px 0;
   font-weight: 500;
+  cursor: pointer;
+  outline: none;
 
   ${media.desktop`
     font-size: 0.85rem;

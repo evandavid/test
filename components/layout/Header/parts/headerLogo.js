@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { LogoWrapper, LogoLink } from './styled';
 import Link from 'next/link';
 
-// import { Link, withRouter } from 'react-router';
 // import { isAdmin } from '#helpers/userRoles';
 // import { withSiteFeatureHelper } from '#features/site/hoc';
 
-const HeaderLogo = ({ user, siteFeatureHelper, router }) => {
+// const HeaderLogo = ({ user, siteFeatureHelper, router }) => {
+const HeaderLogo = () => {
   // add extra accountId if clicking on the logo from dashboard
-  const accountId = router.params?.id || '';
-  const linkUrl = `/account/dashboard/${accountId}`;
+  // const accountId = router.params?.id || '';
+  // const linkUrl = `/account/dashboard/${accountId}`;
+  const linkUrl = `/account/dashboard/1`; // TODO
 
   return (
     <LogoWrapper>

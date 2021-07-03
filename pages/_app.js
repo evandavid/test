@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ContentfulContextProvider contentfulConfig={publicRuntimeConfig.contentful}>
       <IntlProvider locale="en" messages={messagesEn}>
-        {/* <Header isInvestmentProcess={isInvestmentProcess} /> */}
+        <Header isInvestmentProcess={isInvestmentProcess} />
         <Component {...pageProps} />
         <Footer />
       </IntlProvider>

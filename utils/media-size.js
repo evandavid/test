@@ -1,6 +1,6 @@
-if (!global.__SERVER__ || global.__CLIENT__) {
-  require('match-media');
-}
+// if (!global.__SERVER__ || global.__CLIENT__) {
+//   require('match-media');
+// }
 
 const screenSizes = {
   xs: 47.938,

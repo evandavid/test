@@ -1,7 +1,7 @@
 import React from 'react';
 import LanguageButton from './components/LanguageButton/LanguageButton';
 import Dropdown from './LanguageDropdown';
-import languages from 'utils/enums/languages';
+import languages from 'utils/languages';
 import PropTypes from 'prop-types';
 
 export const locales = languages.getSupportedLanguages();

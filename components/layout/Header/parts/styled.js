@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { color } from 'utils';
-import brixLogo from 'public/img/brix.svg';
+// import brixLogo from 'public/img/brix.svg';
 import nnnLogo from 'public/img/newnnn.svg';
 import { sizes } from 'utils';
 import { BRIX } from 'utils/enums/site';
@@ -25,7 +25,7 @@ export const LogoLink = styled.a`
   display: inline-block;
   margin-top: -14px;
   vertical-align: middle;
-  background-image: url(${p => (p.theme.siteId === BRIX ? brixLogo : nnnLogo)});
+  background-image: url(${nnnLogo});
   background-position: ${({ theme }) => (theme.siteId === BRIX ? 'center center' : 'left center')};
   background-size: contain;
   background-repeat: no-repeat;

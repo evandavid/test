@@ -7,10 +7,10 @@ import HIW from 'components/HowItWorks/Hiw';
 import withSEO from 'utils/hoc/withSEO';
 import getSEOData from 'utils/getSEOData';
 import { contentfulConfig } from 'utils';
-import features from 'utils/constants/features';
+// import features from 'utils/constants/features';
 
 const Homepage = () => {
-  console.log('config.constants.features.isTranslationEnabled', features);
+  // console.log('config.constants.features.isTranslationEnabled', features);
   return (
     <div>
       <Intro />

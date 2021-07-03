@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 // import { Dropdown, HeaderNotification } from 'components';
 import HeaderNotification from 'components/layout/Header/parts/HeaderNotification';
-import getSettingsLinks from 'constants/links/settings';
+import getSettingsLinks from 'utils/constants/links/settings';
 // import {
 //   isLogged as checkIsLogged,
 //   isAdminAsUser,
@@ -13,7 +13,7 @@ import getSettingsLinks from 'constants/links/settings';
 //   isAdmin as checkIsAdmin,
 // } from '#helpers/userRoles';
 import { segment } from 'utils/SegmentProxy';
-import { INVEST, ACCOUNT } from 'constants/urls';
+import { INVEST, ACCOUNT } from 'utils/constants/urls';
 import * as Styled from './styled';
 import messages from './messages';
 
@@ -94,14 +94,15 @@ const HeaderActions = ({
         <li className="site--header__item hidden-md hidden-lg">
           {isLogged ? (
             <Link
-              to="/auth/logout"
+              passHref
+              href="/auth/logout"
               className="btn btn--secondary btn--small btn--small--logout"
               onClick={handleClick}
             >
               <FormattedMessage {...messages.headerLogout} />
             </Link>
           ) : (
-            <Link to="/auth/login" onClick={handleLogin}>
+            <Link passHref href="/auth/login" onClick={handleLogin}>
               <Styled.MenuLink>
                 <FormattedMessage {...messages.headerLogin} />
               </Styled.MenuLink>
@@ -122,7 +123,7 @@ const HeaderActions = ({
           </li>
         ) : ( */}
           <li className="site--header__item site--header__name hidden-xs hidden-sm">
-            <Link to="/auth/login" onClick={handleLogin}>
+            <Link passHref href="/auth/login" onClick={handleLogin}>
               <Styled.MenuLink>
                 <FormattedMessage {...messages.headerLogin} />
               </Styled.MenuLink>
@@ -143,7 +144,8 @@ const HeaderActions = ({
         <Styled.SignupWrapper className="site--header__item li-invest-now">
           {!isLogged && (
             <Link
-              to="/auth/signup"
+              passHref  
+              href="/auth/signup"
               onClick={() => handleSignUp()}
               aria-label="Open a signup form"
             >

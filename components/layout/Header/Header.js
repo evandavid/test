@@ -7,7 +7,7 @@ import { HeaderLogo, HeaderTimezone, NotificationBar } from './parts';
 import HeaderActions from 'components/layout/Header/HeaderDesign/HeaderActions';
 import HeaderNav from 'components/layout/Header/HeaderDesign/HeaderNav';
 import HeaderHamburger from 'components/layout/Header/HeaderDesign/HeaderHamburger';
-import getLinks from 'utils/constants/links/nav';
+import { linksCommon } from 'utils/constants/links/nav';
 // import { isAdmin, isUser } from '#helpers/userRoles';
 import HeaderContainer from 'components/layout/Header/parts/headerContainer';
 import { segment } from 'utils/SegmentProxy';
@@ -23,11 +23,11 @@ const headerOffset = 36;
 const topPosition = 0;
 
 const Header = ({
-  appState,
-  auth: { user, isLoginFlow },
+  // appState,
+  // auth: { user, isLoginFlow },
   notificationVisible,
   notifications,
-  fixedHeader,
+  // fixedHeader,
   permissions,
   modal,
   route,
@@ -43,10 +43,10 @@ const Header = ({
   const [notificationBarHidden, setNotificationBarHidden] = useState(false);
 
   useEffect(() => {
-    fixedHeader(false);
-    if (user?.user) {
-      segmentIdentify();
-    }
+    // fixedHeader(false);
+    // if (user?.user) {
+    //   segmentIdentify();
+    // }
   }, []);
 
   useEffect(() => {
@@ -64,7 +64,8 @@ const Header = ({
   }, []);
 
   const handleNotification = prop => {
-    const newState = prop === false ? prop : !appState.isNotificationVisible;
+    // const newState = prop === false ? prop : !appState.isNotificationVisible;
+    const newState = false;
 
     triggerScrollListeners();
     notificationVisible(newState);
@@ -91,15 +92,19 @@ const Header = ({
     (notifications.incompleteTransactionsCount > 0 ||
       notifications.soonToExpireTransactionsCount > 0);
 
-  const notificationOpen = appState.isNotificationVisible && 'notification__open';
+  // const notificationOpen = appState.isNotificationVisible && 'notification__open';
+  const notificationOpen = false;
 
   return (
     <HeaderContainer
-      fixed={appState.fixedHeader}
-      hasNotificationBar={hasNotificationBar}
-      isAdmin={isAdmin(user)}
+      // fixed={appState.fixedHeader}
+      fixed={true}
+      // hasNotificationBar={hasNotificationBar}
+      hasNotificationBar={false}
+      // isAdmin={isAdmin(user)}
+      isAdmin={false}
     >
-      <div className="top">
+      {/* <div className="top">
         {hasNotificationBar && (
           <NotificationBar
             notifications={notifications}
@@ -108,17 +113,19 @@ const Header = ({
             modal={modal}
           />
         )}
-      </div>
+      </div> */}
       <header
         className={cn('site--header', {
           fixed: topPosition > (isMobile ? 0 : headerOffset),
-          'site-header--on-top': isAdmin(user),
+          // 'site-header--on-top': isAdmin(user),
+          'site-header--on-top': false,
         })}
       >
         <HeaderInnerContainer>
           <HeaderLogoWrapper>
-            <HeaderLogo user={user} />
-            {isUser(user) && (
+            {/* <HeaderLogo user={user} /> */}
+            <HeaderLogo/>
+            {/* {isUser(user) && (
               <div className={cn('notification visible-xs visible-sm', notificationOpen)}>
                 <button className="notification__trigger" onClick={handleNotification}>
                   {notifications?.count > 0 && (
@@ -127,12 +134,13 @@ const Header = ({
                   <span className="ico ico--alarm" />
                 </button>
               </div>
-            )}
-            <HeaderHamburger appState={appState} menuVisible={menuVisible} />
+            )} */}
+            {/* <HeaderHamburger appState={appState} menuVisible={menuVisible} /> */}
+            {/* <HeaderHamburger menuVisible={menuVisible} /> */}
           </HeaderLogoWrapper>
           <HeaderNavWrapper>
             <HeaderNav
-              links={getLinks(user, permissions, siteId, isLoginFlow)}
+              links={linksCommon}
               route={route}
               menuVisible={menuVisible}
             />
@@ -152,10 +160,10 @@ const Header = ({
               isLoginFlow={isLoginFlow}
             />
           </HeaderActionsWrapper> */}
-          {isAdmin(user) && !isLoginFlow && <HeaderTimezone />}
-          <div className="visible-xs visible-sm">
+          {/* {isAdmin(user) && !isLoginFlow && <HeaderTimezone />} */}
+          {/* <div className="visible-xs visible-sm">
             <LanguageSwitcher compact />
-          </div>
+          </div> */}
         </HeaderInnerContainer>
       </header>
     </HeaderContainer>
@@ -164,13 +172,13 @@ const Header = ({
 
 export default Header;
 
-Header.propTypes = {
-  appState: PropTypes.object,
-  auth: PropTypes.object,
-  notificationVisible: PropTypes.func,
-  notifications: PropTypes.object,
-  fixedHeader: PropTypes.func,
-  permissions: PropTypes.object,
-  modal: PropTypes.func,
-  route: PropTypes.string,
-};
+// Header.propTypes = {
+//   // appState: PropTypes.object,
+//   // auth: PropTypes.object,
+//   notificationVisible: PropTypes.func,
+//   notifications: PropTypes.object,
+//   fixedHeader: PropTypes.func,
+//   permissions: PropTypes.object,
+//   modal: PropTypes.func,
+//   route: PropTypes.string,
+// };

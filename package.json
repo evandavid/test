@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-pluralrules": "^4.0.28",
     "@styled-icons/boxicons-solid": "^10.34.0",
     "config": "^3.3.6",
     "contentful": "^8.4.2",
+    "core-js": "^3.15.2",
     "imagemin-svgo": "^9.0.0",
+    "localStorage": "^1.0.4",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "next": "11.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-config": "^0.1.0",
