@@ -25,6 +25,7 @@ export const LogoLink = styled.a`
   display: inline-block;
   margin-top: -14px;
   vertical-align: middle;
+  position: relative;
   background-image: url(${nnnLogo});
   background-position: ${({ theme }) => (theme.siteId === BRIX ? 'center center' : 'left center')};
   background-size: contain;

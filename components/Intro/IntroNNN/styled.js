@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 import { media, sizes, color } from 'utils';
+import banner from 'public/banner-image.png';
+
 export const Banner = styled.div`
   height: 460px;
   overflow: hidden;
@@ -8,16 +10,14 @@ export const Banner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/banner-image.png');
+  background: url(${banner});
   background-size: cover;
-
+  width: 100%;
   ${media.mobile`
     height: 365px;
-  `}
-
-  ${media.desktop`
+  `} ${media.desktop`
     height: 635px;
-  `}
+  `};
 `;
 
 export const BannerDescription = styled.div`

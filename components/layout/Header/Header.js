@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import localStorage from 'localStorage';
 import cn from 'classnames';
 // import { triggerScrollListeners } from '#components/layout/ContentContainer';
@@ -38,6 +37,7 @@ const Header = ({
   setRedirectLoop,
   push,
   isTranslationEnabled,
+  isMenuVisible,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [notificationBarHidden, setNotificationBarHidden] = useState(false);
@@ -123,8 +123,7 @@ const Header = ({
       >
         <HeaderInnerContainer>
           <HeaderLogoWrapper>
-            {/* <HeaderLogo user={user} /> */}
-            <HeaderLogo/>
+            <HeaderLogo />
             {/* {isUser(user) && (
               <div className={cn('notification visible-xs visible-sm', notificationOpen)}>
                 <button className="notification__trigger" onClick={handleNotification}>
@@ -136,19 +135,15 @@ const Header = ({
               </div>
             )} */}
             {/* <HeaderHamburger appState={appState} menuVisible={menuVisible} /> */}
-            {/* <HeaderHamburger menuVisible={menuVisible} /> */}
+            <HeaderHamburger menuVisible={menuVisible} isMenuVisible={isMenuVisible} />
           </HeaderLogoWrapper>
           <HeaderNavWrapper>
-            <HeaderNav
-              links={linksCommon}
-              route={route}
-              menuVisible={menuVisible}
-            />
+            <HeaderNav links={linksCommon} route={route} menuVisible={menuVisible} />
           </HeaderNavWrapper>
-          {/* <HeaderActionsWrapper>
+          <HeaderActionsWrapper>
             <HeaderActions
-              appState={appState}
-              user={user}
+              appState={{}}
+              user={{}}
               getNotifications={getNotifications}
               menuVisible={menuVisible}
               setRedirectLoop={setRedirectLoop}
@@ -157,9 +152,9 @@ const Header = ({
               notifications={notifications}
               isTranslationEnabled={isTranslationEnabled}
               onNotificationShow={handleNotification}
-              isLoginFlow={isLoginFlow}
+              isLoginFlow={false}
             />
-          </HeaderActionsWrapper> */}
+          </HeaderActionsWrapper>
           {/* {isAdmin(user) && !isLoginFlow && <HeaderTimezone />} */}
           {/* <div className="visible-xs visible-sm">
             <LanguageSwitcher compact />
@@ -171,14 +166,3 @@ const Header = ({
 };
 
 export default Header;
-
-// Header.propTypes = {
-//   // appState: PropTypes.object,
-//   // auth: PropTypes.object,
-//   notificationVisible: PropTypes.func,
-//   notifications: PropTypes.object,
-//   fixedHeader: PropTypes.func,
-//   permissions: PropTypes.object,
-//   modal: PropTypes.func,
-//   route: PropTypes.string,
-// };

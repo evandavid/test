@@ -34,11 +34,11 @@ const HeaderActions = ({
   let isLogged = false;
   let isUser = false;
 
-  if (!isLoginFlow) {
-    isAdmin = checkIsAdmin(user);
-    isLogged = checkIsLogged(user);
-    isUser = checkIsUser(user);
-  }
+  // if (!isLoginFlow) {
+  //   isAdmin = checkIsAdmin(user);
+  //   isLogged = checkIsLogged(user);
+  //   isUser = checkIsUser(user);
+  // }
 
   const handleClick = () => menuVisible(false);
 
@@ -59,7 +59,7 @@ const HeaderActions = ({
   };
 
   let links = getSettingsLinks(user, permissions).filter(
-    link => !link.translationDisabled || isTranslationEnabled,
+    link => !link.translationDisabled || isTranslationEnabled
   );
   const btnText = isUser ? (
     <FormattedMessage {...messages.headerAction1} />
@@ -76,17 +76,17 @@ const HeaderActions = ({
   });
 
   // admin logged as user
-  if (isAdminAsUser(user)) {
-    links = [
-      ...links,
-      {
-        displayClass: 'item--simple',
-        subtitle: null,
-        title: 'Back to admin',
-        url: '/admin/logout-as-user',
-      },
-    ];
-  }
+  // if (isAdminAsUser(user)) {
+  //   links = [
+  //     ...links,
+  //     {
+  //       displayClass: 'item--simple',
+  //       subtitle: null,
+  //       title: 'Back to admin',
+  //       url: '/admin/logout-as-user',
+  //     },
+  //   ];
+  // }
 
   return (
     <div className="site--header__actions">
@@ -122,13 +122,13 @@ const HeaderActions = ({
             />
           </li>
         ) : ( */}
-          <li className="site--header__item site--header__name hidden-xs hidden-sm">
-            <Link passHref href="/auth/login" onClick={handleLogin}>
-              <Styled.MenuLink>
-                <FormattedMessage {...messages.headerLogin} />
-              </Styled.MenuLink>
-            </Link>
-          </li>
+        <li className="site--header__item site--header__name hidden-xs hidden-sm">
+          <Link passHref href="/auth/login" onClick={handleLogin}>
+            <Styled.MenuLink>
+              <FormattedMessage {...messages.headerLogin} />
+            </Styled.MenuLink>
+          </Link>
+        </li>
         {/* )} */}
 
         {isUser && (
@@ -144,7 +144,7 @@ const HeaderActions = ({
         <Styled.SignupWrapper className="site--header__item li-invest-now">
           {!isLogged && (
             <Link
-              passHref  
+              passHref
               href="/auth/signup"
               onClick={() => handleSignUp()}
               aria-label="Open a signup form"

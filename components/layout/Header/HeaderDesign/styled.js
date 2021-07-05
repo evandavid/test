@@ -22,7 +22,8 @@ export const ColoredButton = styled(BtnCommon)`
   `}
 `;
 
-export const MenuLink = styled.div`
+export const MenuLink = styled.a`
+  display: block;
   font-size: 18px;
   margin-right: 25px;
   position: relative;
@@ -30,7 +31,7 @@ export const MenuLink = styled.div`
   font-weight: 500;
   cursor: pointer;
   outline: none;
-
+  color: rgb(43, 41, 38);
   ${media.desktop`
     font-size: 0.85rem;
     padding: 0;
@@ -60,6 +61,10 @@ export const MenuLink = styled.div`
     position: absolute;
     bottom: -12px;
     border-radius: 5px 5px 0px 0px;
+  }
+  &:hover,
+  &.active {
+    color: rgb(157, 163, 194);
   }
 `;
 
@@ -129,7 +134,7 @@ export const WithDropdown = styled(MenuLink)`
       top: 35px;
       background: ${color('dropdownBg')};
       padding: 0 24px;
-      width: 240px;
+      width: 256px;
       height: 265px;
       left: -24px;
       text-align: left;
@@ -139,6 +144,9 @@ export const WithDropdown = styled(MenuLink)`
         &:before {
           bottom: 0;
         }
+      }
+      & > a:before {
+        bottom: 0
       }
     }
   `}
@@ -157,8 +165,6 @@ export const WithDropdown = styled(MenuLink)`
       margin-left: 24px;
     }
   `}
-
-
 `;
 
 export const SignupWrapper = styled.li`

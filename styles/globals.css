@@ -14,12 +14,12 @@ a {
   box-sizing: border-box;
 }
 
-/* @font-face {
+@font-face {
   font-family: iconfont;
-  src: url(/dist/fonts/iconfont.eot?#iefix) format('embedded-opentype'),
-    url(/dist/fonts/iconfont.woff) format('woff'), url(/dist/fonts/iconfont.ttf) format('truetype'),
-    url(/dist/0bd22deee55d34868ce3eadbd6bdc53f.svg#iconfont) format('svg');
-} */
+  src: url(/fonts/iconfont.eot?#iefix) format('embedded-opentype'),
+    url(/fonts/iconfont.woff) format('woff'), url(/fonts/iconfont.ttf) format('truetype'),
+    url(/0bd22deee55d34868ce3eadbd6bdc53f.svg#iconfont) format('svg');
+}
 .ico {
   line-height: 1;
 }
@@ -31516,4 +31516,25 @@ tr:hover .sticker.sticker--deleted__big {
 .btn .circle-loader-wrap .circle-loader {
   position: absolute;
   margin-top: -19px;
+}
+
+@media screen and (min-width: 0) and (max-width: 63.938em) {
+  .menu--visible .site--header {
+    height: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 9999;
+  }
+
+  .menu--visible .site--header__nav-primary > ul.site--header__list > li.site--header__item > a {
+    color: rgb(43, 41, 38);
+  }
+
+  .menu--visible .site--header__actions .site--header__list .site--header__item.hidden-md.hidden-lg a {
+    margin-bottom: 12px;
+  }
 }

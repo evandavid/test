@@ -16,7 +16,9 @@ const HeaderLogo = () => {
   return (
     <LogoWrapper>
       <Link href={linkUrl} passHref>
-        <LogoLink className="sr-only">Link to homepage</LogoLink>
+        <LogoLink>
+          <span className="sr-only">Link to homepage</span>
+        </LogoLink>
       </Link>
     </LogoWrapper>
   );

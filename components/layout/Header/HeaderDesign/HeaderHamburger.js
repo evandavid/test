@@ -3,12 +3,12 @@ import React from 'react';
 import { HamburgerMenu } from './styled';
 import cn from 'classnames';
 
-const HeaderHamburger = ({ appState, menuVisible }) => {
+const HeaderHamburger = ({ appState, menuVisible, isMenuVisible }) => {
   const handleClick = () => {
-    menuVisible(!appState.isMenuVisible);
+    menuVisible(!isMenuVisible);
   };
 
-  const { isMenuVisible } = appState;
+  // const { isMenuVisible } = appState || {};
   const btnMenuClass = isMenuVisible ? 'opened' : 'closed';
 
   return (
@@ -26,4 +26,5 @@ export default HeaderHamburger;
 HeaderHamburger.propTypes = {
   appState: PropTypes.object,
   menuVisible: PropTypes.func,
+  isMenuVisible: PropTypes.bool,
 };
