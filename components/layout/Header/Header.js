@@ -8,7 +8,7 @@ import HeaderNav from 'components/layout/Header/HeaderDesign/HeaderNav';
 import HeaderHamburger from 'components/layout/Header/HeaderDesign/HeaderHamburger';
 import { linksCommon } from 'utils/constants/links/nav';
 // import { isAdmin, isUser } from '#helpers/userRoles';
-import HeaderContainer from 'components/layout/Header/parts/headerContainer';
+import HeaderContainer from 'components/layout/Header/parts/HeaderContainer';
 import { segment } from 'utils/SegmentProxy';
 import LanguageSwitcher from 'components/commons/intl/LanguageSwitcher/LanguageSwitcher';
 import {
