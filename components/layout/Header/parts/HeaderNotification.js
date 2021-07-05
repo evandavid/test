@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ClickOutHandler from 'react-onclickout';
 import cn from 'classnames';
-import { ID as HEADER_CONTAINER_ID } from 'components/layout/Header/parts/headerContainer';
+import { ID as HEADER_CONTAINER_ID } from 'components/layout/Header/parts/HeaderContainer';
 import NotificationList, {
   ID as NOTIFICATION_LIST_ID,
 } from 'components/layout/Header/notificationList/NotificationList';
