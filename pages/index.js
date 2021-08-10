@@ -19,7 +19,7 @@ const Homepage = () => {
       <section className="section section--how-it-works large-padding-top" id="how-it-works">
         <HIW />
       </section>
-      <DashboardInvestmentList />
+      {/* <DashboardInvestmentList /> */}
     </div>
   );
 };
