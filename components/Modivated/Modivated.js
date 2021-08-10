@@ -14,7 +14,7 @@ const modivated = () => (
     <Styled.ModivatedContainer>
       <Styled.ModivatedRow>
         <Styled.ModivatedOrderTwo>
-          <img width={783} height={440} src={'/img/modivated/cover-image.png?webp'} alt="CoverImage" />
+          <img width={783} height={440} src={'/img/modivated/cover-image.webp'} alt="CoverImage" />
         </Styled.ModivatedOrderTwo>
         <Styled.ModivatedOrderOne>
           <Styled.ModivatedTextHolder>
