@@ -1,20 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import CoverImage from 'public/img/modivated/cover-image.png?webp';
+// import CoverImage from 'public/img/modivated/cover-image.png?webp';
 import BtnCommon from 'components/commons/buttons/BtnCommon';
 import * as Styled from './styled';
 import Link from 'next/link';
 import Tooltip from 'components/commons/CustomTooltip';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const modivated = () => (
   <Styled.ModivatedSection>
     <Styled.ModivatedContainer>
       <Styled.ModivatedRow>
         <Styled.ModivatedOrderTwo>
-          <Image width={783} height={440} src={CoverImage} alt="CoverImage" />
+          <img width={783} height={440} src={'/img/modivated/cover-image.png?webp'} alt="CoverImage" />
         </Styled.ModivatedOrderTwo>
         <Styled.ModivatedOrderOne>
           <Styled.ModivatedTextHolder>
